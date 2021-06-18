@@ -1,29 +1,39 @@
-<h1 align="center">Hi 👋, I'm Shishir Naresh</h1>
-<h3 align="center">A passionate data scientist from India</h3>
+<h2> Hey there! I'm shishir naresh. <img src="https://github.com/souvikguria98/souvikguria98/blob/master/Hi.gif" width="25"></h2>
+<img align="right" alt="GIF" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif" width="500"/>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=shishirnaresh23&label=Profile%20views&color=0e75b6&style=flat" alt="shishirnaresh23" /> </p>
+<h3> 👨🏻‍💻 About Me </h3>
 
-<p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=shishirnaresh23" alt="shishirnaresh23" /></a> </p>
+- 🔭 &nbsp; I’m currently learning data analysis and machine learning
+- 🤔 &nbsp; Exploring new technologies and developing software solutions and quick hacks.
+- 🎓 &nbsp; Studying data science, computer programming, mathematics and statistics .
+- 💼 &nbsp; Backend developer and aspiring data scientist.
+- 🌱 &nbsp; Enthusiast in data driven application development and Artificial Intelligence .
+- ☕ &nbsp; I belive, a perfect cup of tea can be the ultimate solution for any stress. 
 
-- 🔭 I’m currently working on **Bio-Medical NER**
+<h3>🛠 Tech Stack</h3>
 
-- 🌱 I’m currently learning **Data Analysis, Distributed Computing and Deep learning**
+- 💻 &nbsp; Python | Scala | R | Typescript  
+- 🌐 &nbsp;  Flask | Angular | HTML | Pandas | Numpy | Sklearn | NLP | Machine Learning 
+- 🛢 &nbsp; MySQL | Neo4j | MongoDB
+- 🔧 &nbsp; Jupyter Notebooks | PyCharm | Visual Studio code | Git
+- 🖥 &nbsp; Apache Spark | Power BI | GCP | Apache Spark MLib | Matplotlib
 
-- 👯 I’m looking to collaborate on **NLP projects using ML and Deep learning**
+<br>
 
-- 💬 Ask me about **NLP, Python, OOPS, DESIGN PATTERNS and KNOWLEDGE GRAPH**
+<img align="center" src="https://github-readme-stats.vercel.app/api?username=devSouvik&include_all_commits=true&count_private=true&show_icons=true&line_height=20&title_color=7A7ADB&icon_color=2234AE&text_color=D3D3D3&bg_color=0,000000,130F40" alt="devSouvik's Github Stats">
 
-- 📫 How to reach me **nareshshishir@yahoo.com**
+</br>
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://dev.to/nareshshishir23" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/dev-dot-to.svg" alt="nareshshishir23" height="30" width="40" /></a>
-<a href="https://linkedin.com/in/shishir naresh" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="shishir naresh" height="30" width="40" /></a>
-<a href="https://kaggle.com/shishir" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/kaggle.svg" alt="shishir" height="30" width="40" /></a>
-<a href="https://www.hackerrank.com/@nareshshishir1" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/hackerrank.svg" alt="@nareshshishir1" height="30" width="40" /></a>
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=devSouvik&layout=compact&text_color=daf7dc&bg_color=151515)](https://github.com/devSouvik/github-readme-stats)
+
+
+<h3> 🤝🏻 Connect with Me </h3>
+
+<p align="center">
+&nbsp; <a href="https://www.linkedin.com/in/shishir-naresh-aa468b9a" target="_blank" rel="noopener noreferrer"><img src="https://image.flaticon.com/icons/png/512/174/174857.png" width="50" /></a>  
+&nbsp; <a href="https://stackoverflow.com/users/10722934/shishir-naresh" target="_blank" rel="noopener noreferrer"><img src="https://cdn4.iconfinder.com/data/icons/socialcones/508/StackOverflow-512.png" width="50" /></a>  
+&nbsp; <a href="https://www.kaggle.com/shishir23" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/windows/50/000000/kaggle.png" width="50" /></a>
+&nbsp; <a href="mailto:nareshshishir@yahoo.com" target="_blank" rel="noopener noreferrer"><img src="https://img.icons8.com/color/48/000000/yahoo-mail-app.png"  width="50" /></a>
 </p>
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://angular.io" target="_blank"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a> <a href="https://aws.amazon.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a> <a href="https://getbootstrap.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://flask.palletsprojects.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" alt="flask" width="40" height="40"/> </a> <a href="https://cloud.google.com" target="_blank"> <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg" alt="gcp" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://heroku.com" target="_blank"> <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://mariadb.org/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/mariadb/mariadb-icon.svg" alt="mariadb" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://www.scala-lang.org" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/scala/scala-original.svg" alt="scala" width="40" height="40"/> </a> <a href="https://scikit-learn.org/" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="40" height="40"/> </a> <a href="https://www.tensorflow.org" target="_blank"> <img src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg" alt="tensorflow" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> </p>
-
-<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=shishirnaresh23&show_icons=true&locale=en&layout=compact" alt="shishirnaresh23" /></p>
+⭐️ From [datascientistShishir](https://github.com/shishirnaresh23)
