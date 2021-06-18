@@ -1,5 +1,5 @@
 <h2> Hey there! I'm shishir naresh. <img src="https://github.com/souvikguria98/souvikguria98/blob/master/Hi.gif" width="25"></h2>
-<img align="right" alt="GIF" src="https://raw.githubusercontent.com/devSouvik/devSouvik/master/gif3.gif" width="500"/>
+<img align="right" alt="GIF" src="https://github.com/ShishirNaresh23/ShishirNaresh23/blob/main/focus.gif" width="500"/>
 
 <h3> 👨🏻‍💻 About Me </h3>
 
