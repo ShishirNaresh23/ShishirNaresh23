@@ -6,13 +6,13 @@
 - 🔭 &nbsp; I’m currently learning data analysis and machine learning
 - 🤔 &nbsp; Exploring new technologies and developing software solutions and quick hacks.
 - 🎓 &nbsp; Studying data science, computer programming, mathematics and statistics .
-- 💼 &nbsp; Backend developer and aspiring data scientist.
+- 💼 &nbsp; Backend and Knowledge Graph developer and aspiring data scientist.
 - 🌱 &nbsp; Enthusiast in data driven application development and Artificial Intelligence .
 - ☕ &nbsp; I belive, a perfect cup of tea can be the ultimate solution for any stress. 
 
 <h3>🛠 Tech Stack</h3>
 
-- 💻 &nbsp; Python | Scala | R | Typescript  
+- 💻 &nbsp; Python | Scala | R | Typescript | Knowledge Graph
 - 🌐 &nbsp;  Flask | Angular | HTML | Pandas | Numpy | Sklearn | NLP | Machine Learning 
 - 🛢 &nbsp; MySQL | Neo4j | MongoDB
 - 🔧 &nbsp; Jupyter Notebooks | PyCharm | Visual Studio code | Git
