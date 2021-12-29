@@ -3,17 +3,17 @@
 
 <h3> 👨🏻‍💻 About Me </h3>
 
-- 🔭 &nbsp; I’m currently learning data analysis and machine learning
-- 🤔 &nbsp; Exploring new technologies and developing software solutions and quick hacks.
-- 🎓 &nbsp; Studying data science, computer programming, mathematics and statistics .
-- 💼 &nbsp; Backend and Knowledge Graph developer and aspiring data scientist.
+- 🔭 &nbsp; I’m currently working in data mining and natural language processing.
+- 🤔 &nbsp; Exploring new technologies and developing software solutions.
+- 🎓 &nbsp; Learning data science, computer programming, mathematics and statistics .
+- 💼 &nbsp; Data Scientist, Backend developer and Knowledge Graph(Neo4j) certified developer.
 - 🌱 &nbsp; Enthusiast in data driven application development and Artificial Intelligence .
 - ☕ &nbsp; I belive, a perfect cup of tea can be the ultimate solution for any stress. 
 
 <h3>🛠 Tech Stack</h3>
 
-- 💻 &nbsp; Python | Typescript | Knowledge Graph
-- 🌐 &nbsp;  Flask | Angular | Pandas | Numpy | Sklearn | NLP | Machine Learning 
+- 💻 &nbsp; Python | Node.js | Typescript | Knowledge Graph(NEO 4J) | Data Structures and Algorithum | System Design
+- 🌐 &nbsp;  Flask | Angular | Pandas | Numpy | Sklearn | NLP | Time Series Analysis |Machine Learning 
 - 🛢 &nbsp; MySQL | Neo4j | MongoDB
 - 🔧 &nbsp; Jupyter Notebooks | PyCharm | Visual Studio code | Git
 - 🖥 &nbsp; Azure | Apache Spark MLib | Matplotlib
