@@ -12,11 +12,11 @@
 
 <h3>🛠 Tech Stack</h3>
 
-- 💻 &nbsp; Python | Scala | R | Typescript | Knowledge Graph
-- 🌐 &nbsp;  Flask | Angular | HTML | Pandas | Numpy | Sklearn | NLP | Machine Learning 
+- 💻 &nbsp; Python | Typescript | Knowledge Graph
+- 🌐 &nbsp;  Flask | Angular | Pandas | Numpy | Sklearn | NLP | Machine Learning 
 - 🛢 &nbsp; MySQL | Neo4j | MongoDB
 - 🔧 &nbsp; Jupyter Notebooks | PyCharm | Visual Studio code | Git
-- 🖥 &nbsp; Apache Spark | Power BI | GCP | Apache Spark MLib | Matplotlib
+- 🖥 &nbsp; Azure | Apache Spark MLib | Matplotlib
 
 <br>
 
