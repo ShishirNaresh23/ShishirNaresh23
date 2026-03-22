@@ -1,0 +1,3272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Shishir Naresh · Gen-AI & Data Science Leader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&family=IBM+Plex+Mono:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --bg: #04080f;
+      --bg1: #080e1a;
+      --bg2: #0b1323;
+      --surface: rgba(255, 255, 255, 0.038);
+      --glass: rgba(14, 30, 65, 0.65);
+      --border: rgba(255, 255, 255, 0.075);
+      --border-hi: rgba(56, 189, 248, 0.32);
+      --ink: #dde6f5;
+      --muted: #7a90b8;
+      --dim: #3a4d6a;
+      --c1: #38bdf8;
+      --c2: #34d399;
+      --c3: #a78bfa;
+      --c4: #fb923c;
+      --g1: rgba(56, 189, 248, .13);
+      --g2: rgba(52, 211, 153, .1);
+      --fh: 'Space Grotesk', sans-serif;
+      --fd: 'Playfair Display', serif;
+      --fm: 'IBM Plex Mono', monospace;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--fh);
+      font-size: 16px;
+      line-height: 1.75;
+      overflow-x: hidden
+    }
+
+    ::-webkit-scrollbar {
+      width: 3px
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg)
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--c1);
+      border-radius: 3px
+    }
+
+    /* ══ BG CANVAS ══ */
+    #bg-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none
+    }
+
+    /* ══ NAV ══ */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .85rem 3rem;
+      background: rgba(4, 8, 15, .88);
+      backdrop-filter: blur(22px) saturate(1.6);
+      border-bottom: 1px solid var(--border);
+      transition: padding .3s
+    }
+
+    nav.scrolled {
+      padding: .65rem 3rem
+    }
+
+    .logo {
+      font-family: var(--fm);
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: .05em
+    }
+
+    .logo span {
+      color: var(--c1)
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none
+    }
+
+    .nav-links a {
+      font-family: var(--fm);
+      font-size: .64rem;
+      text-decoration: none;
+      color: var(--muted);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: color .2s;
+      position: relative
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--c1);
+      transition: width .3s
+    }
+
+    .nav-links a:hover {
+      color: var(--c1)
+    }
+
+    .nav-links a:hover::after {
+      width: 100%
+    }
+
+    .nav-resume-btn {
+      font-family: var(--fm);
+      font-size: .62rem;
+      padding: .32rem .9rem;
+      border: 1px solid var(--border-hi);
+      color: var(--c1);
+      background: transparent;
+      border-radius: 5px;
+      cursor: pointer;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: background .2s, transform .2s;
+      text-decoration: none;
+      white-space: nowrap
+    }
+
+    .nav-resume-btn:hover {
+      background: var(--g1);
+      transform: translateY(-1px)
+    }
+
+    /* ══ HERO ══ */
+    #hero {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      align-items: center;
+      gap: 3rem;
+      padding: 0 3rem;
+      max-width: 1150px;
+      margin: 0 auto
+    }
+
+    @media(max-width:880px) {
+      #hero {
+        grid-template-columns: 1fr;
+        padding-top: 7rem
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--fm);
+      font-size: .62rem;
+      color: var(--c2);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      background: rgba(52, 211, 153, .08);
+      border: 1px solid rgba(52, 211, 153, .22);
+      padding: .28rem .85rem;
+      border-radius: 999px;
+      margin-bottom: 1.4rem;
+      opacity: 0;
+      animation: fadeUp .6s .1s ease forwards
+    }
+
+    .hero-badge::before {
+      content: '●';
+      font-size: .45rem;
+      animation: blink 1.5s infinite
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .2
+      }
+    }
+
+    h1.hero-name {
+      font-family: var(--fd);
+      font-weight: 700;
+      font-size: clamp(2.8rem, 5.5vw, 5.2rem);
+      line-height: 1.0;
+      letter-spacing: -.02em;
+      color: var(--ink);
+      opacity: 0;
+      animation: fadeUp .6s .2s ease forwards
+    }
+
+    h1.hero-name em {
+      font-style: italic;
+      color: var(--c1)
+    }
+
+    .hero-tagline {
+      font-family: var(--fm);
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: .8rem;
+      letter-spacing: .04em;
+      opacity: 0;
+      animation: fadeUp .6s .35s ease forwards
+    }
+
+    .hero-tagline span {
+      color: var(--c3)
+    }
+
+    .hero-desc {
+      max-width: 520px;
+      margin-top: 1.3rem;
+      font-size: .93rem;
+      color: var(--muted);
+      line-height: 1.85;
+      opacity: 0;
+      animation: fadeUp .6s .5s ease forwards
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.8rem;
+      opacity: 0;
+      animation: fadeUp .6s .65s ease forwards
+    }
+
+    .stat {
+      border-left: 2px solid var(--c1);
+      padding-left: 1rem
+    }
+
+    .stat-num {
+      font-family: var(--fd);
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: var(--c1);
+      line-height: 1
+    }
+
+    .stat-num.g {
+      color: var(--c2)
+    }
+
+    .stat-num.v {
+      color: var(--c3)
+    }
+
+    .stat-lbl {
+      font-family: var(--fm);
+      font-size: .56rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-top: .15rem
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: .85rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp .6s .8s ease forwards
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      padding: .62rem 1.45rem;
+      border-radius: 7px;
+      font-family: var(--fm);
+      font-size: .69rem;
+      letter-spacing: .06em;
+      text-decoration: none;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: all .25s
+    }
+
+    .btn-p {
+      background: var(--c1);
+      color: #030810;
+      font-weight: 600;
+      box-shadow: 0 0 22px rgba(56, 189, 248, .28)
+    }
+
+    .btn-p:hover {
+      box-shadow: 0 0 36px rgba(56, 189, 248, .52);
+      transform: translateY(-2px)
+    }
+
+    .btn-o {
+      background: transparent;
+      color: var(--c1);
+      border: 1px solid var(--border-hi)
+    }
+
+    .btn-o:hover {
+      background: var(--g1);
+      transform: translateY(-2px)
+    }
+
+    .btn-dl {
+      background: transparent;
+      color: var(--c2);
+      border: 1px solid rgba(52, 211, 153, .35)
+    }
+
+    .btn-dl:hover {
+      background: rgba(52, 211, 153, .1);
+      transform: translateY(-2px)
+    }
+
+    .hero-scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .4rem;
+      opacity: 0;
+      animation: fadeUp .6s 1.2s ease forwards
+    }
+
+    .hero-scroll-hint span {
+      font-family: var(--fm);
+      font-size: .6rem;
+      color: var(--dim);
+      letter-spacing: .1em;
+      text-transform: uppercase
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, var(--c1), transparent);
+      animation: scrollPulse 2s ease infinite
+    }
+
+    @keyframes scrollPulse {
+
+      0%,
+      100% {
+        opacity: .3;
+        transform: scaleY(1)
+      }
+
+      50% {
+        opacity: 1;
+        transform: scaleY(1.2)
+      }
+    }
+
+    /* Globe */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeUp .8s .4s ease both
+    }
+
+    #globe-canvas {
+      display: block;
+      cursor: grab
+    }
+
+    #globe-canvas:active {
+      cursor: grabbing
+    }
+
+    .globe-label {
+      font-family: var(--fm);
+      font-size: .58rem;
+      color: var(--dim);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-top: .9rem;
+      text-align: center
+    }
+
+    /* ══ MAIN ══ */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 3rem 6rem
+    }
+
+    /* ══ SECTION REVEAL ══ */
+    /* All animatable elements are VISIBLE by default.
+   JS adds .ready class to body once observer is set up,
+   then .will-animate hides them so observer can reveal them.
+   This guarantees content never stays hidden if JS/observer fails. */
+    .body-ready .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s cubic-bezier(.25, .8, .25, 1), transform .7s cubic-bezier(.25, .8, .25, 1)
+    }
+
+    .body-ready .reveal.vis {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .body-ready .reveal-left {
+      opacity: 0;
+      transform: translateX(-32px);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .body-ready .reveal-left.vis {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .body-ready .reveal-right {
+      opacity: 0;
+      transform: translateX(32px);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .body-ready .reveal-right.vis {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .body-ready .reveal-scale {
+      opacity: 0;
+      transform: scale(.93);
+      transition: opacity .65s ease, transform .65s ease
+    }
+
+    .body-ready .reveal-scale.vis {
+      opacity: 1;
+      transform: scale(1)
+    }
+
+    /* Stagger */
+    .body-ready .stagger-children>* {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .55s ease, transform .55s ease
+    }
+
+    .body-ready .stagger-children.vis>*:nth-child(1) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .04s
+    }
+
+    .body-ready .stagger-children.vis>*:nth-child(2) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .11s
+    }
+
+    .body-ready .stagger-children.vis>*:nth-child(3) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .18s
+    }
+
+    .body-ready .stagger-children.vis>*:nth-child(4) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .25s
+    }
+
+    .body-ready .stagger-children.vis>*:nth-child(5) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .32s
+    }
+
+    .body-ready .stagger-children.vis>*:nth-child(6) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .39s
+    }
+
+    .body-ready .stagger-children.vis>*:nth-child(7) {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: .46s
+    }
+
+    .section {
+      padding: 5rem 0 1rem
+    }
+
+    .sec-eyebrow {
+      font-family: var(--fm);
+      font-size: .62rem;
+      color: var(--c1);
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: .55rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem
+    }
+
+    .sec-eyebrow::before {
+      content: '//';
+      color: var(--c2);
+      font-size: .68rem
+    }
+
+    .sec-eyebrow::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--border-hi), transparent);
+      max-width: 160px
+    }
+
+    .sec-title {
+      font-family: var(--fd);
+      font-weight: 700;
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      letter-spacing: -.02em;
+      color: var(--ink);
+      margin-bottom: 2.4rem;
+      line-height: 1.1
+    }
+
+    /* ══ ABOUT ══ */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2.5rem;
+      align-items: start
+    }
+
+    @media(max-width:700px) {
+      .about-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .about-text {
+      font-size: .93rem;
+      color: var(--muted);
+      line-height: 1.88
+    }
+
+    .about-text strong {
+      color: var(--ink)
+    }
+
+    .about-text p+p {
+      margin-top: .9rem
+    }
+
+    /* Target roles banner */
+    .target-roles {
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+      margin-top: 1.4rem
+    }
+
+    .role-pill {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      padding: .65rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: .83rem;
+      transition: border-color .25s, background .25s
+    }
+
+    .role-pill:hover {
+      border-color: var(--border-hi);
+      background: var(--glass)
+    }
+
+    .role-pill .rp-icon {
+      font-size: 1rem;
+      flex-shrink: 0
+    }
+
+    .role-pill .rp-text strong {
+      display: block;
+      color: var(--ink);
+      font-size: .86rem
+    }
+
+    .role-pill .rp-text span {
+      color: var(--muted);
+      font-size: .78rem
+    }
+
+    /* Skill bars */
+    .key-skills {
+      display: flex;
+      flex-direction: column;
+      gap: .7rem
+    }
+
+    .ks-item {}
+
+    .ks-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: .28rem
+    }
+
+    .ks-name {
+      font-family: var(--fm);
+      font-size: .65rem;
+      color: var(--ink);
+      letter-spacing: .03em
+    }
+
+    .ks-pct {
+      font-family: var(--fm);
+      font-size: .63rem;
+      color: var(--c1)
+    }
+
+    .ks-bar {
+      height: 4px;
+      background: rgba(255, 255, 255, .06);
+      border-radius: 3px;
+      overflow: hidden
+    }
+
+    .ks-fill {
+      height: 100%;
+      border-radius: 3px;
+      background: linear-gradient(to right, var(--c1), var(--c3));
+      width: 0;
+      transition: width 1.3s cubic-bezier(.25, .8, .25, 1)
+    }
+
+    .about-chart-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem;
+      margin-top: 1.2rem
+    }
+
+    .chart-lbl {
+      font-family: var(--fm);
+      font-size: .6rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: .8rem
+    }
+
+    /* ══ SKILLS ══ */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem
+    }
+
+    @media(max-width:750px) {
+      .skills-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:480px) {
+      .skills-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .sk-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem;
+      transition: border-color .3s, background .3s, transform .3s
+    }
+
+    .sk-card:hover {
+      border-color: var(--border-hi);
+      background: var(--glass);
+      transform: translateY(-3px)
+    }
+
+    .sk-icon {
+      font-size: 1.35rem;
+      margin-bottom: .65rem
+    }
+
+    .sk-lbl {
+      font-family: var(--fm);
+      font-size: .59rem;
+      color: var(--c2);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .65rem
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .32rem
+    }
+
+    .tag {
+      font-family: var(--fm);
+      font-size: .64rem;
+      padding: .18rem .58rem;
+      border-radius: 4px;
+      background: rgba(56, 189, 248, .07);
+      color: var(--c1);
+      border: 1px solid rgba(56, 189, 248, .16);
+      transition: background .2s, transform .2s;
+      cursor: default
+    }
+
+    .tag:hover {
+      background: rgba(56, 189, 248, .17);
+      transform: translateY(-1px)
+    }
+
+    .tag.g {
+      background: rgba(52, 211, 153, .07);
+      color: var(--c2);
+      border-color: rgba(52, 211, 153, .16)
+    }
+
+    .tag.g:hover {
+      background: rgba(52, 211, 153, .17)
+    }
+
+    .tag.v {
+      background: rgba(167, 139, 250, .07);
+      color: var(--c3);
+      border-color: rgba(167, 139, 250, .16)
+    }
+
+    .tag.v:hover {
+      background: rgba(167, 139, 250, .17)
+    }
+
+    .tag.a {
+      background: rgba(251, 146, 60, .07);
+      color: var(--c4);
+      border-color: rgba(251, 146, 60, .16)
+    }
+
+    .tag.a:hover {
+      background: rgba(251, 146, 60, .17)
+    }
+
+    /* ══ EDUCATION ══ */
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: .85rem
+    }
+
+    .edu-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.05rem 1.3rem 1.05rem 1.55rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--c1);
+      border-radius: 0 10px 10px 0;
+      transition: border-left-color .3s, background .3s, transform .3s
+    }
+
+    .edu-card:hover {
+      border-left-color: var(--c2);
+      background: var(--glass);
+      transform: translateX(5px)
+    }
+
+    .edu-deg {
+      font-family: var(--fh);
+      font-weight: 600;
+      font-size: .96rem;
+      color: var(--ink)
+    }
+
+    .edu-uni {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-top: .12rem
+    }
+
+    .edu-score {
+      font-family: var(--fm);
+      font-size: .7rem;
+      color: var(--c2);
+      margin-top: .22rem
+    }
+
+    .edu-yr {
+      font-family: var(--fm);
+      font-size: .68rem;
+      color: var(--dim);
+      white-space: nowrap;
+      padding-top: .2rem;
+      flex-shrink: 0
+    }
+
+    /* ══ TIMELINE ══ */
+    .timeline {
+      position: relative;
+      padding-left: 2.2rem
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 12px;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--c1), var(--c2), transparent)
+    }
+
+    .exp {
+      position: relative;
+      margin-bottom: 3rem
+    }
+
+    .exp-dot {
+      position: absolute;
+      left: -2.2rem;
+      top: 8px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--c1);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 12px rgba(56, 189, 248, .6);
+      transition: background .3s, transform .3s, box-shadow .3s
+    }
+
+    .exp:hover .exp-dot {
+      background: var(--c2);
+      transform: scale(1.5);
+      box-shadow: 0 0 18px rgba(52, 211, 153, .7)
+    }
+
+    .exp-hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: .3rem;
+      margin-bottom: .2rem
+    }
+
+    .exp-role {
+      font-family: var(--fh);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--ink);
+      letter-spacing: -.01em
+    }
+
+    .exp-co {
+      font-size: .83rem;
+      color: var(--c1);
+      font-weight: 600;
+      margin-top: .1rem
+    }
+
+    .exp-period {
+      font-family: var(--fm);
+      font-size: .67rem;
+      color: var(--dim);
+      white-space: nowrap;
+      padding-top: .25rem
+    }
+
+    .exp-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .28rem;
+      margin: .48rem 0 .62rem
+    }
+
+    .exp-sub {
+      margin-top: .88rem
+    }
+
+    .exp-sub+.exp-sub {
+      margin-top: 1rem;
+      padding-top: .85rem;
+      border-top: 1px dashed rgba(255, 255, 255, .05)
+    }
+
+    .exp-sub-ttl {
+      font-family: var(--fm);
+      font-size: .63rem;
+      color: var(--c4);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: .42rem;
+      display: flex;
+      align-items: center;
+      gap: .38rem
+    }
+
+    .exp-sub-ttl::before {
+      content: '◆';
+      font-size: .42rem;
+      color: var(--c4)
+    }
+
+    .exp ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .26rem
+    }
+
+    .exp li {
+      font-size: .87rem;
+      color: var(--muted);
+      padding-left: 1.05rem;
+      position: relative;
+      line-height: 1.65
+    }
+
+    .exp li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--c1);
+      font-size: .62rem;
+      top: .3rem
+    }
+
+    .exp li strong {
+      color: var(--ink)
+    }
+
+    /* ══ PROJECTS ══ */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.1rem
+    }
+
+    @media(max-width:600px) {
+      .proj-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .proj-card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.4rem;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color .3s, transform .3s, box-shadow .3s
+    }
+
+    .proj-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 0% 0%, var(--g1), transparent 65%);
+      opacity: 0;
+      transition: opacity .4s
+    }
+
+    .proj-card:hover {
+      border-color: var(--border-hi);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(56, 189, 248, .08)
+    }
+
+    .proj-card:hover::before {
+      opacity: 1
+    }
+
+    .proj-num {
+      font-family: var(--fm);
+      font-size: .58rem;
+      color: var(--dim);
+      letter-spacing: .1em;
+      margin-bottom: .65rem
+    }
+
+    .proj-card h3 {
+      font-family: var(--fh);
+      font-weight: 700;
+      font-size: .94rem;
+      color: var(--ink);
+      margin-bottom: .45rem
+    }
+
+    .proj-card p {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.65
+    }
+
+    .proj-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .28rem;
+      margin-top: .85rem
+    }
+
+    .proj-open-hint {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      margin-top: .85rem;
+      font-family: var(--fm);
+      font-size: .6rem;
+      color: var(--c1);
+      letter-spacing: .06em;
+      text-transform: uppercase
+    }
+
+    .proj-open-hint svg {
+      width: 12px;
+      height: 12px;
+      transition: transform .2s
+    }
+
+    .proj-card:hover .proj-open-hint svg {
+      transform: translateX(3px)
+    }
+
+    /* ══ PROJECT MODAL ══ */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(4, 8, 15, .88);
+      backdrop-filter: blur(16px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all
+    }
+
+    .modal {
+      background: var(--bg1);
+      border: 1px solid var(--border-hi);
+      border-radius: 18px;
+      max-width: 680px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 2.2rem;
+      position: relative;
+      transform: scale(.94) translateY(12px);
+      transition: transform .35s cubic-bezier(.25, .8, .25, 1)
+    }
+
+    .modal-overlay.open .modal {
+      transform: scale(1) translateY(0)
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.1rem;
+      right: 1.2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--fm);
+      font-size: .7rem;
+      padding: .3rem .7rem;
+      border-radius: 5px;
+      cursor: pointer;
+      letter-spacing: .06em;
+      transition: color .2s, border-color .2s
+    }
+
+    .modal-close:hover {
+      color: var(--c1);
+      border-color: var(--border-hi)
+    }
+
+    .modal-tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .32rem;
+      margin-bottom: 1rem
+    }
+
+    .modal-title {
+      font-family: var(--fd);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: .6rem;
+      letter-spacing: -.02em
+    }
+
+    .modal-subtitle {
+      font-family: var(--fm);
+      font-size: .65rem;
+      color: var(--c2);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem
+    }
+
+    .modal-section-title {
+      font-family: var(--fm);
+      font-size: .63rem;
+      color: var(--c4);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin: 1.3rem 0 .5rem;
+      display: flex;
+      align-items: center;
+      gap: .35rem
+    }
+
+    .modal-section-title::before {
+      content: '◆';
+      font-size: .42rem
+    }
+
+    .modal p,
+    .modal li {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.8
+    }
+
+    .modal li {
+      padding-left: 1.1rem;
+      position: relative;
+      margin-bottom: .25rem
+    }
+
+    .modal li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--c1);
+      font-size: .62rem;
+      top: .28rem
+    }
+
+    .modal ul {
+      list-style: none;
+      padding: 0
+    }
+
+    .modal strong {
+      color: var(--ink)
+    }
+
+    .modal-impact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .7rem;
+      margin-top: .6rem
+    }
+
+    .impact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: .8rem;
+      text-align: center
+    }
+
+    .impact-num {
+      font-family: var(--fd);
+      font-size: 1.5rem;
+      color: var(--c1);
+      font-weight: 700
+    }
+
+    .impact-lbl {
+      font-family: var(--fm);
+      font-size: .58rem;
+      color: var(--muted);
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      margin-top: .2rem
+    }
+
+    /* ══ VIZ STRIP ══ */
+    .viz-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem
+    }
+
+    @media(max-width:700px) {
+      .viz-strip {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .viz-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.1rem;
+      text-align: center
+    }
+
+    .viz-card-title {
+      font-family: var(--fm);
+      font-size: .58rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-top: .65rem
+    }
+
+    /* ══ AWARDS ══ */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .72rem
+    }
+
+    @media(max-width:550px) {
+      .awards-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .award {
+      display: flex;
+      align-items: flex-start;
+      gap: .72rem;
+      padding: .85rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: border-color .3s, background .3s
+    }
+
+    .award:hover {
+      border-color: rgba(251, 146, 60, .28);
+      background: rgba(251, 146, 60, .04)
+    }
+
+    .award-icon {
+      font-size: .9rem;
+      flex-shrink: 0;
+      margin-top: .1rem
+    }
+
+    .award-body {
+      font-size: .82rem;
+      color: var(--muted);
+      line-height: 1.5
+    }
+
+    .award-body strong {
+      color: var(--ink);
+      display: block;
+      font-size: .85rem
+    }
+
+    /* ══ CONTACT ══ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: .88rem
+    }
+
+    .c-card {
+      display: flex;
+      flex-direction: column;
+      gap: .12rem;
+      padding: 1.05rem 1.2rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-decoration: none;
+      transition: border-color .3s, background .3s, transform .3s
+    }
+
+    .c-card:hover {
+      border-color: var(--border-hi);
+      background: var(--glass);
+      transform: translateY(-3px)
+    }
+
+    .c-icon {
+      font-size: 1.25rem;
+      margin-bottom: .3rem
+    }
+
+    .c-lbl {
+      font-family: var(--fm);
+      font-size: .58rem;
+      color: var(--dim);
+      letter-spacing: .1em;
+      text-transform: uppercase
+    }
+
+    .c-val {
+      font-size: .84rem;
+      color: var(--ink);
+      word-break: break-all
+    }
+
+    /* ══ ADMIN PANEL ══ */
+    .admin-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 600;
+      background: rgba(4, 8, 15, .92);
+      backdrop-filter: blur(18px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s
+    }
+
+    .admin-overlay.open {
+      opacity: 1;
+      pointer-events: all
+    }
+
+    .admin-panel {
+      background: var(--bg1);
+      border: 1px solid var(--border-hi);
+      border-radius: 18px;
+      width: 100%;
+      max-width: 780px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative
+    }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1rem
+    }
+
+    .admin-header h2 {
+      font-family: var(--fd);
+      font-size: 1.5rem;
+      color: var(--ink)
+    }
+
+    .admin-close {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-family: var(--fm);
+      font-size: .68rem;
+      padding: .3rem .75rem;
+      border-radius: 5px;
+      cursor: pointer;
+      letter-spacing: .06em;
+      transition: color .2s, border-color .2s
+    }
+
+    .admin-close:hover {
+      color: var(--c1);
+      border-color: var(--border-hi)
+    }
+
+    .admin-tabs {
+      display: flex;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap
+    }
+
+    .admin-tab {
+      font-family: var(--fm);
+      font-size: .65rem;
+      padding: .38rem .9rem;
+      border-radius: 5px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: transparent;
+      cursor: pointer;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      transition: all .2s
+    }
+
+    .admin-tab.active {
+      background: var(--c1);
+      color: #030810;
+      border-color: var(--c1);
+      font-weight: 600
+    }
+
+    .admin-section {
+      display: none
+    }
+
+    .admin-section.active {
+      display: block
+    }
+
+    .admin-field {
+      margin-bottom: 1rem
+    }
+
+    .admin-field label {
+      display: block;
+      font-family: var(--fm);
+      font-size: .62rem;
+      color: var(--muted);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: .35rem
+    }
+
+    .admin-field input,
+    .admin-field textarea,
+    .admin-field select {
+      width: 100%;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--ink);
+      font-family: var(--fh);
+      font-size: .88rem;
+      padding: .6rem .85rem;
+      outline: none;
+      transition: border-color .2s
+    }
+
+    .admin-field input:focus,
+    .admin-field textarea:focus,
+    .admin-field select:focus {
+      border-color: var(--border-hi)
+    }
+
+    .admin-field textarea {
+      min-height: 90px;
+      resize: vertical;
+      line-height: 1.6
+    }
+
+    .admin-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .8rem
+    }
+
+    @media(max-width:500px) {
+      .admin-row {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .admin-save-btn {
+      font-family: var(--fm);
+      font-size: .7rem;
+      padding: .55rem 1.4rem;
+      background: var(--c1);
+      color: #030810;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: box-shadow .2s, transform .2s;
+      margin-top: .5rem
+    }
+
+    .admin-save-btn:hover {
+      box-shadow: 0 0 22px rgba(56, 189, 248, .4);
+      transform: translateY(-1px)
+    }
+
+    .admin-proj-list {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+      margin-bottom: 1.2rem
+    }
+
+    .admin-proj-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .7rem .9rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px
+    }
+
+    .admin-proj-item span {
+      font-size: .87rem;
+      color: var(--ink)
+    }
+
+    .admin-proj-item .api-btns {
+      display: flex;
+      gap: .4rem
+    }
+
+    .api-btn {
+      font-family: var(--fm);
+      font-size: .6rem;
+      padding: .22rem .6rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: transparent;
+      cursor: pointer;
+      letter-spacing: .05em;
+      transition: all .2s
+    }
+
+    .api-btn.edit:hover {
+      color: var(--c1);
+      border-color: var(--border-hi)
+    }
+
+    .api-btn.del:hover {
+      color: #f87171;
+      border-color: rgba(248, 113, 113, .3)
+    }
+
+    .admin-note {
+      font-family: var(--fm);
+      font-size: .64rem;
+      color: var(--dim);
+      line-height: 1.6;
+      margin-top: .5rem;
+      padding: .6rem .8rem;
+      background: rgba(56, 189, 248, .04);
+      border: 1px solid rgba(56, 189, 248, .1);
+      border-radius: 6px
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 700;
+      font-family: var(--fm);
+      font-size: .72rem;
+      color: var(--bg);
+      background: var(--c2);
+      padding: .65rem 1.3rem;
+      border-radius: 8px;
+      letter-spacing: .05em;
+      transform: translateY(20px);
+      opacity: 0;
+      transition: opacity .3s, transform .3s;
+      pointer-events: none
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    /* ══ FOOTER ══ */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 1.8rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--fm);
+      font-size: .64rem;
+      color: var(--dim);
+      letter-spacing: .05em
+    }
+
+    footer span {
+      color: var(--c1)
+    }
+
+    /* ══ KEYFRAMES ══ */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    /* ══ MOBILE ══ */
+    @media(max-width:680px) {
+      nav {
+        padding: .85rem 1.5rem
+      }
+
+      .nav-links {
+        gap: 1rem
+      }
+
+      #hero,
+      main {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem
+      }
+
+      .timeline {
+        padding-left: 1.6rem
+      }
+
+      .exp-dot {
+        left: -1.6rem
+      }
+
+      .hero-stats {
+        gap: 1.2rem
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- NAV -->
+  <nav id="main-nav">
+    <a class="logo" href="#"><span>//</span> shishir.naresh</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-resume-btn" href="#" onclick="downloadResume(event)">↓ Resume</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-left">
+      <p class="hero-badge">AI/ML Engineer @ UST · Open to Senior DS / Gen-AI / Research Roles</p>
+      <h1 class="hero-name">Shishir<br><em>Naresh</em></h1>
+      <p class="hero-tagline">Gen-AI · RAG Pipelines · Statistical ML · <span>Model Serving (Flask/FastAPI)</span></p>
+      <p class="hero-desc"><span id="hero-yrs-txt">9+</span> years at the intersection of data science and applied AI —
+        building ML/statistical models, Gen-AI pipelines with RAG and LLM orchestration, Knowledge Graphs in Neo4j, and
+        model-serving APIs with Flask &amp; FastAPI. Now targeting <strong style="color:var(--ink)">Senior Data
+          Scientist, Gen-AI Engineer, and Research Scientist</strong> roles.</p>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num" id="stat-yrs">–</div>
+          <div class="stat-lbl">Years Exp.</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num g" id="stat-kg">–</div>
+          <div class="stat-lbl">DS / ML Yrs</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num v" id="stat-aw">7×</div>
+          <div class="stat-lbl">Excellence Awards</div>
+        </div>
+      </div>
+      <div class="hero-cta">
+        <a class="btn btn-p" href="#projects">View Projects</a>
+        <a class="btn btn-o" href="/cdn-cgi/l/email-protection#ee808f9c8b9d869d86879d86879cae978f868181c08d8183">Hire
+          Me</a>
+        <a class="btn btn-dl" href="#" onclick="downloadResume(event)">↓ Download CV</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <canvas id="globe-canvas" width="320" height="320" style="width:320px;height:320px"></canvas>
+      <p class="globe-label">Knowledge graph · drag to rotate</p>
+    </div>
+    <div class="hero-scroll-hint"><span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <main>
+
+    <!-- ABOUT -->
+    <div class="section" id="about">
+      <p class="sec-eyebrow reveal">Who I am</p>
+      <h2 class="sec-title reveal">About Me</h2>
+      <div class="about-grid">
+        <div class="reveal-left">
+          <div class="about-text">
+            <p>I'm a <strong>Data Scientist and Gen-AI Engineer</strong> with <span id="about-yrs-txt">10+</span> years
+              of experience spanning statistical modelling, classical ML, and modern generative AI. Currently at
+              <strong>UST</strong> as AI/ML Engineer, building RAG pipelines, agentic chatbot architectures, and ML
+              model-serving APIs with <strong>Flask and FastAPI</strong>.</p>
+            <p>My work spans <strong>LifeSciences (6 yrs)</strong> — genomics Knowledge Graphs, biomarker ML, Document generation using NER and RAG
+              pipelines in Neo4j, Chatbot with Service Now integration,  — <strong>Cybersecurity (2 yrs)</strong> — anomaly detection, ETL pipelines, and
+              AWS-orchestrated analytics at Accenture — and <strong>Telecom (2 yrs)</strong> — Statistical Modelling for Anomaly detection in Network Logs, Pole detection in images for network optimization, Gen-AI chatbot with tool
+              orchestration.</p>
+            <p>I hold an <strong>M.Tech in AI/ML from BITS Pilani</strong> (A Grade, 2022–2024), grounding my applied
+              engineering work in strong theoretical foundations across deep learning, NLP, and statistical inference.
+            </p>
+          </div>
+          <div class="target-roles" style="margin-top:1.5rem">
+            <div
+              style="font-family:var(--fm);font-size:.62rem;color:var(--c1);letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem">
+              Targeting roles like</div>
+            <div class="role-pill"><span class="rp-icon">🧠</span>
+              <div class="rp-text"><strong>Senior Data Scientist / Gen-AI</strong><span>RAG · LLM integration
+                  · Graph AI · Python · Azure/AWS</span></div>
+            </div>
+            <div class="role-pill"><span class="rp-icon">🔬</span>
+              <div class="rp-text"><strong>Research Scientist — LifeSciences AI</strong><span>Knowledge Graphs ·
+                  Genomics · Semantic Modelling · NLP</span></div>
+            </div>
+            <div class="role-pill"><span class="rp-icon">☁️</span>
+              <div class="rp-text"><strong>Senior AI/ML Engineer</strong><span>RAG · LLM integration · Backend Development · MLOps · Cloud
+                  Pipelines · AWS · GCP · BIG Query </span></div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="key-skills" id="skill-bars">
+            <div class="ks-item">
+              <div class="ks-top"><span class="ks-name">Gen-AI · RAG · LLM Orchestration · RAG Data Modelling</span><span
+                  class="ks-pct">85%</span></div>
+              <div class="ks-bar">
+                <div class="ks-fill" data-w="85"></div>
+              </div>
+            </div>
+            <div class="ks-item">
+              <div class="ks-top"><span class="ks-name">Statistical ML · Classical Models · Deep Learning · NLP(Natural Langugage Processing)</span><span
+                  class="ks-pct">98%</span></div>
+              <div class="ks-bar">
+                <div class="ks-fill" data-w="88"></div>
+              </div>
+            </div>
+            <div class="ks-item">
+              <div class="ks-top"><span class="ks-name">Model Serving (Flask / FastAPI)</span><span
+                  class="ks-pct">82%</span></div>
+              <div class="ks-bar">
+                <div class="ks-fill" data-w="82"></div>
+              </div>
+            </div>
+            <div class="ks-item">
+              <div class="ks-top"><span class="ks-name">Knowledge Graphs (Neo4j) · Qdrant (Vector Database)</span><span class="ks-pct">87%</span>
+              </div>
+              <div class="ks-bar">
+                <div class="ks-fill" data-w="87"></div>
+              </div>
+            </div>
+            <div class="ks-item">
+              <div class="ks-top"><span class="ks-name">ETL · Data Pipelines · Cloud</span><span
+                  class="ks-pct">90%</span></div>
+              <div class="ks-bar">
+                <div class="ks-fill" data-w="90"></div>
+              </div>
+            </div>
+            <div class="ks-item">
+              <div class="ks-top"><span class="ks-name">Python · Pandas · EDA · Backend Development</span><span class="ks-pct">91%</span>
+              </div>
+              <div class="ks-bar">
+                <div class="ks-fill" data-w="91"></div>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="about-chart-wrap" style="margin-top:1.1rem">
+            <div class="chart-lbl">Experience by domain</div>
+            <div id="domain-widget" style="display:flex;align-items:center;gap:1.1rem;">
+              <div style="position:relative;flex-shrink:0;width:80px;height:80px;">
+                <canvas id="domain-chart" style="width:80px;height:80px;"></canvas>
+                <div
+                  style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.58rem;color:var(--muted);text-align:center;line-height:1.3;pointer-events:none">
+                  10+<br>yrs</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:.38rem;flex:1;" id="domain-pills"></div>
+            </div>
+          </div> -->
+          <div class="about-chart-wrap" style="margin-top:1.1rem">
+            <div class="chart-lbl">Experience by domain</div>
+            <div id="domain-widget" style="display:flex;align-items:center;gap:1.1rem;">
+              <div style="position:relative;flex-shrink:0;width:80px;height:80px;">
+                <canvas id="domain-chart" style="width:80px;height:80px;"></canvas>
+                <div
+                  id="domain-yrs-label"
+                  style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--fm);font-size:.58rem;color:var(--muted);text-align:center;line-height:1.3;pointer-events:none">
+                  9+<br>yrs
+                </div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:.38rem;flex:1;" id="domain-pills"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section" id="skills">
+      <p class="sec-eyebrow reveal">Technical Arsenal</p>
+      <h2 class="sec-title reveal">Skills &amp; Tools</h2>
+      <div class="skills-grid stagger-children" id="skills-grid">
+        <div class="sk-card">
+          <div class="sk-icon">🧠</div>
+          <div class="sk-lbl">Gen-AI &amp; LLM Engineering</div>
+          <div class="tags"><span class="tag">LLM Integration</span><span class="tag">RAG Pipelines</span><span
+              class="tag">Prompt Engineering</span><span class="tag">LangChain</span><span class="tag">Tool
+              Orchestration</span><span class="tag">Agentic AI</span><span class="tag">Vector DBs</span><span
+              class="tag">Embeddings</span></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-icon">📊</div>
+          <div class="sk-lbl">Classical ML &amp; Statistics</div>
+          <div class="tags"><span class="tag g">Scikit-learn</span><span class="tag g">Random Forest</span><span
+              class="tag g">Gradient Boosting</span><span class="tag g">Logistic Regression</span><span
+              class="tag g">Survival Analysis</span><span class="tag g">Clustering</span><span class="tag g">PCA /
+              t-SNE</span><span class="tag g">Anomaly Detection</span><span class="tag g">Statistical Modelling</span></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-icon">🚀</div>
+          <div class="sk-lbl">Model Serving &amp; APIs</div>
+          <div class="tags"><span class="tag v">FastAPI</span><span class="tag v">Flask</span><span class="tag v">REST
+              API</span><span class="tag v">JWT</span><span
+              class="tag v">Docker</span><span class="tag v">AWS Lambda</span><span class="tag v">GCP RUN</span></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-icon">🕸️</div>
+          <div class="sk-lbl">Knowledge Graphs &amp; Semantic AI</div>
+          <div class="tags"><span class="tag">Neo4j</span><span class="tag">Cypher</span><span class="tag">Knowledge
+              Graphs</span><span class="tag">Semantic Modelling</span><span class="tag">Graph RAG</span><span
+              class="tag">Ontologies</span></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-icon">☁️</div>
+          <div class="sk-lbl">Cloud &amp; Data Engineering</div>
+          <div class="tags"><span class="tag a">AWS</span><span class="tag a">Azure</span><span class="tag a">Step
+              Functions</span><span class="tag a">CloudWatch</span><span class="tag a">ETL / Kettle</span><span
+              class="tag a">MySQL</span><span class="tag a">MongoDB</span><span class="tag a">Qdrant</span><span class="tag a">Chroma DB</span></div>
+        </div>
+        <div class="sk-card">
+          <div class="sk-icon">🔬</div>
+          <div class="sk-lbl">Data Science &amp; Research</div>
+          <div class="tags"><span class="tag g">Python</span><span class="tag g">Pandas</span><span
+              class="tag g">NumPy</span><span class="tag g">EDA</span><span class="tag g">Feature
+              Engineering</span><span class="tag g">NLP(Natural Langugage Processing)</span><span class="tag g">LifeSciences</span><span class="tag g">Genomics AI</span>
+            <span class="tag g">Deep Learning</span><span class="tag g">Py Torch</span><span class="tag g">TensorFlow</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section" id="education">
+      <p class="sec-eyebrow reveal">Academic Background</p>
+      <h2 class="sec-title reveal">Education</h2>
+      <div class="edu-list stagger-children">
+        <div class="edu-card">
+          <div>
+            <div class="edu-deg">M.Tech — Artificial Intelligence &amp; Machine Learning</div>
+            <div class="edu-uni">BITS Pilani (Distance Learning)</div>
+            <div class="edu-score">A Grade</div>
+          </div>
+          <div class="edu-yr">2022 – 2024</div>
+        </div>
+        <div class="edu-card">
+          <div>
+            <div class="edu-deg">B.Tech — Electrical Engineering</div>
+            <div class="edu-uni">Uttarakhand Technical University, Dehradun</div>
+            <div class="edu-score">75.6%</div>
+          </div>
+          <div class="edu-yr">May 2015</div>
+        </div>
+        <div class="edu-card">
+          <div>
+            <div class="edu-deg">Class XII</div>
+            <div class="edu-uni">St. Mary's Sr. Sec. School · CBSE, Haridwar</div>
+            <div class="edu-score">85.6%</div>
+          </div>
+          <div class="edu-yr">2011</div>
+        </div>
+        <div class="edu-card">
+          <div>
+            <div class="edu-deg">Class X</div>
+            <div class="edu-uni">St. Mary's Sr. Sec. School · CBSE, Haridwar</div>
+            <div class="edu-score">90%</div>
+          </div>
+          <div class="edu-yr">2009</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section" id="experience">
+      <p class="sec-eyebrow reveal">Career Journey</p>
+      <h2 class="sec-title reveal">Work Experience</h2>
+      <div class="timeline">
+
+        <!-- UST — Current -->
+        <div class="exp reveal">
+          <div class="exp-dot"></div>
+          <div class="exp-hdr">
+            <div>
+              <div class="exp-role">AI/ML Engineer → Data Scientist</div>
+              <div class="exp-co">UST · Noida</div>
+            </div>
+            <div class="exp-period">Nov 2024 – Present</div>
+          </div>
+          <div class="exp-tech">
+            <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Flask</span>
+            <span class="tag g">RAG Pipelines</span><span class="tag g">LLM Orchestration</span>
+            <span class="tag g">Scikit-learn</span><span class="tag v">AWS</span><span class="tag v">GCP</span>
+            <span class="tag v">Classical ML</span><span class="tag v">Deep Learning</span><span class="tag v">Tensor Flow</span>
+          </div>
+          <div class="exp-sub">
+            <div class="exp-sub-ttl">AI/ML Engineering &amp; Data Science · Nov 2024 – Present</div>
+            <ul>
+              <li>Designing and building <strong>RAG pipelines</strong> with LLM orchestration for enterprise knowledge
+                retrieval — combining vector embeddings, semantic search, and LLM synthesis for production-grade Q&amp;A
+                systems.</li>
+              <li>Designing and building <strong>GCP AI Pipeline</strong> with Vertex AI Model Garden for pole detection in google 
+                street images for site optimization.</li>
+              <li>Developing <strong>agentic chatbot architectures</strong> with multi-tool orchestration
+                (function-calling, tool routing, session context management) for complex multi-turn dialogue systems.
+              </li>
+              <li>Improving <strong>existing agentic chatbot</strong> for multi-tool orchestration
+                (function-calling, tool routing, session context management) for complex multi-turn dialogue systems using
+                different <strong> design patterns like Task decomposition and ReACT patterns</strong> and making integration of new tools 
+                <strong>seemless and reducing the time of tool integration from weeks to 1-2 days</strong>.
+              </li>
+              <li>Training and evaluating <strong>classical ML models</strong> (gradient boosting, random forest,
+                logistic regression) with full experiment tracking, hyperparameter tuning, and statistical validation.
+              </li>
+              <li>Exposing ML models as <strong>REST microservices via FastAPI &amp; Flask</strong>, with async
+                inference endpoints, request validation, and containerised deployments.</li>
+              <li>Applying <strong>statistical modelling</strong> techniques — hypothesis testing, regression analysis,
+                feature selection, and anomaly detection — to extract actionable insight from large datasets.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Accenture -->
+        <div class="exp reveal">
+          <div class="exp-dot"></div>
+          <div class="exp-hdr">
+            <div>
+              <div class="exp-role">Senior Software Engineer (Data Engineer)</div>
+              <div class="exp-co">Accenture · Noida</div>
+            </div>
+            <div class="exp-period">Mar 2022 – Nov 2024</div>
+          </div>
+          <div class="exp-tech">
+            <span class="tag">Python</span><span class="tag">TypeScript</span>
+            <span class="tag g">Statistical Modelling</span><span class="tag g">Classical ML</span>
+            <span class="tag g">MySQL</span><span class="tag v">AWS</span><span class="tag v">CloudWatch</span><span
+              class="tag v">Step Functions</span>
+          </div>
+          <div class="exp-sub">
+            <div class="exp-sub-ttl">Information Security Analytics Platform · Mar 2022 – Nov 2024 · Cybersecurity
+              Domain</div>
+            <ul>
+              <li>Architected <strong>ETL ingestion pipelines</strong> centralising multi-source security telemetry into
+                MySQL with feature engineering and statistical data-quality validation at each stage.</li>
+              <li>Designed and deployed <strong>statistical anomaly-detection models</strong> (isolation forest, z-score
+                baselines, time-series decomposition) on security telemetry to surface threats in near real-time.</li>
+              <li>Orchestrated pipeline execution using <strong>AWS Step Functions</strong>, with CloudWatch alerting
+                for model drift, latency thresholds, and data-quality failures.</li>
+              <li>Built EDA and reporting layers translating model outputs into <strong>executive-level insight
+                  dashboards</strong> for security leadership.</li>
+              <li>Performed migration of <strong>MySQL database to Postgres SQL AWS RDS</strong> for existing dashboard application.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- TCS -->
+        <div class="exp reveal">
+          <div class="exp-dot"></div>
+          <div class="exp-hdr">
+            <div>
+              <div class="exp-role">IT Analyst</div>
+              <div class="exp-co">Tata Consultancy Services · Noida</div>
+            </div>
+            <div class="exp-period">Jan 2016 – Feb 2022</div>
+          </div>
+          <div class="exp-tech">
+            <span class="tag">Python</span><span class="tag">Scikit-learn</span><span class="tag">Flask</span>
+            <span class="tag g">Neo4j</span><span class="tag g">RAG</span><span class="tag g">Knowledge Graphs</span>
+            <span class="tag v">Azure</span><span class="tag">AI Orchestration</span>
+            <span class="tag">Classical ML</span><span class="tag">Deep Learning</span><span class="tag">Node.js</span>
+          </div>
+
+          <div class="exp-sub">
+            <div class="exp-sub-ttl">Gen-AI &amp; Knowledge Graph — Genomics Platform · May 2019 – Feb 2022 ·
+              LifeSciences Domain</div>
+            <ul>
+              <li>Architected a <strong>Retrieval-Augmented Generation (RAG) pipeline</strong> over genomic literature —
+                using Neo4j as graph store, vector embeddings for semantic retrieval, and an ML layer for synthesis,
+                enabling natural-language Q&amp;A over complex biological datasets.</li>
+              <li>Designed <strong>Knowledge Graph schemas in Neo4j (Cypher)</strong> to model genomic entities (genes,
+                proteins, pathways, phenotypes); implemented bulk ingestion pipelines from structured and unstructured
+                LifeSciences sources.</li>
+              <li>Built <strong>classical ML models</strong> (random forest, gradient boosting, logistic regression) for
+                biomarker classification; served models via <strong>Flask REST APIs</strong>.</li>
+              <li>Applied <strong>statistical modelling</strong> — survival analysis, clustering (K-Means, DBSCAN),
+                PCA/t-SNE — to derive insight from high-dimensional genomic feature sets.</li>
+            </ul>
+          </div>
+
+          <div class="exp-sub">
+            <div class="exp-sub-ttl">Gen-AI Chatbot &amp; Tool Orchestration · Feb 2018 – Apr 2019 · Telecom Domain
+            </div>
+            <ul>
+              <li>Designed an <strong>Microsoft Azure ITSM chatbot</strong> with multi-step dialog flow — routing user
+                intent to ServiceNow, Image-to-Text AI inference, and a knowledge-base retrieval layer.</li>
+              <li>Utilized a <strong>Azure Cloud Model architecture</strong> for intent routing — a direct
+                precursor to modern agentic AI patterns.</li>
+              <li>Deployed across MS Teams, Skype, Cortana voice, and Directline on <strong>Azure</strong>; managed
+                cloud infra for multi-channel zero-downtime deployment.</li>
+              <li>Implemented <strong>session context management</strong> and conversation history storage for coherent
+                multi-turn dialogue.</li>
+            </ul>
+          </div>
+
+          <div class="exp-sub">
+            <div class="exp-sub-ttl">Data Engineering &amp; ML Pipeline — Clinical Trials · Apr 2016 – Jan 2018 ·
+              LifeSciences Domain</div>
+            <ul>
+              <li>Built <strong>data synchronisation pipelines</strong> aggregating clinical trial data from multiple
+                heterogeneous sources with statistical quality checks (distribution tests, outlier detection,
+                completeness scoring).</li>
+              <li>Implemented a <strong>GridFS MongoDB multimedia API</strong> for chunked upload and streaming of
+                clinical imaging and trial recordings.</li>
+              <li>Led ILP project team; awarded <strong>ILP LIREL — Best Associate During Training</strong>.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section" id="projects">
+      <p class="sec-eyebrow reveal">Research &amp; Engineering Work</p>
+      <h2 class="sec-title reveal">Projects</h2>
+      <div class="proj-grid stagger-children" id="proj-grid">
+        <div class="proj-card" onclick="openModal('kg')">
+          <div class="proj-num">PROJECT 01 · RESEARCH</div>
+          <h3>Genomics Knowledge Graph Platform</h3>
+          <p>End-to-end KG system for LifeSciences genomics research — ingestion, semantic modelling, and interactive
+            visualisation.</p>
+          <div class="proj-tags"><span class="tag g">Neo4j</span><span class="tag g">Knowledge Graph</span><span
+              class="tag">Spring Boot</span><span class="tag">Python</span></div>
+          <div class="proj-open-hint">Explore project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></div>
+        </div>
+        <div class="proj-card" onclick="openModal('bot')">
+          <div class="proj-num">PROJECT 02 · AI ENGINEERING</div>
+          <h3>AI-Powered ITSM Chatbot</h3>
+          <p>Enterprise chatbot with Image-to-Text AI inference, ServiceNow integration, voice channel, and multi-cloud
+            deployment.</p>
+          <div class="proj-tags"><span class="tag">Node.js</span><span class="tag">Bot Framework</span><span
+              class="tag v">Azure</span><span class="tag">Image-to-Text AI</span></div>
+          <div class="proj-open-hint">Explore project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></div>
+        </div>
+        <div class="proj-card" onclick="openModal('etl')">
+          <div class="proj-num">PROJECT 03 · DATA ENGINEERING</div>
+          <h3>Information Security ETL Dashboard</h3>
+          <p>Cloud-native ETL platform ingesting multi-source security telemetry with AWS Step Functions orchestration
+            and live analytics.</p>
+          <div class="proj-tags"><span class="tag">Python</span><span class="tag g">MySQL</span><span
+              class="tag v">AWS</span><span class="tag a">ETL</span></div>
+          <div class="proj-open-hint">Explore project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></div>
+        </div>
+        <div class="proj-card" onclick="openModal('trial')">
+          <div class="proj-num">PROJECT 04 · LIFESCIENCES</div>
+          <h3>Clinical Trial Digitalization</h3>
+          <p>Multi-source data synchronisation system and GridFS MongoDB streaming API for digitising clinical trial
+            workflows.</p>
+          <div class="proj-tags"><span class="tag">Java</span><span class="tag g">MongoDB</span><span class="tag">REST
+              API</span><span class="tag">Node.js</span></div>
+          <div class="proj-open-hint">Explore project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></div>
+        </div>
+        <div class="proj-card" onclick="openModal('agentic')">
+          <div class="proj-num">PROJECT 05 · Agentic AI chatbot with Tool Orchestration</div>
+          <h3>Tool orchestration using LLM chatbot</h3>
+          <p>Integration different tools more than 6 inside a chatbot and triggering single or multiple tools based on the intent of the user and 
+            gathering response and summarizing the same for the user. Also providing the answers to queries related to Telecom Domain based on the customer 
+          centric documentation.</p>
+          <div class="proj-tags"><span class="tag">Java</span><span class="tag g">LLM</span><span class="tag">RAG</span>
+            <span class="tag">Python</span><span class="tag">LangGraph</span> <span class="tag">Design Patterns</span></div>
+          <div class="proj-open-hint">Explore project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></div>
+        </div>
+        <div class="proj-card" onclick="openModal('rag')">
+          <div class="proj-num">PROJECT 06 · Document Ingestion Platform in RAG Database</div>
+          <h3>RAG Modelling and Ingestion</h3>
+          <p>Designed and Developed a platform that can ingest, updated and delete documents inside a RAG databse. Developed multiple ingestion 
+            strategies for different kind of documents inside the RAG database.
+          </p>
+          <div class="proj-tags"><span class="tag">Python</span><span class="tag g">Qdrant</span><span class="tag">RAG</span>
+            <span class="tag">LLM</span></div>
+          <div class="proj-open-hint">Explore project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></div>
+        </div>
+        <div class="proj-card" onclick="openModal('pole')">
+          <div class="proj-num">PROJECT 07 · Pole Detection using GCP Vertex AI</div>
+          <h3>Pole Detection using Vertex AI</h3>
+          <p>Developed a whole GCP AI pipeline to detect poles inside a google street images based on the GEO Coordinates pased while triggering the
+            pipeline and store result into buckets after completion.
+          </p>
+          <div class="proj-tags"><span class="tag">Python</span><span class="tag g">GCP</span><span class="tag">Vertex AI</span>
+            <span class="tag">LLM</span><span class="tag">GCP RUN Functions</span><span class="tag">Task Queue</span></div>
+          <div class="proj-open-hint">Explore project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg></div>
+        </div>
+      </div>
+      <!-- <div class="viz-strip reveal">
+        <div class="viz-card"><canvas id="chart-domain" height="120"></canvas>
+          <div class="viz-card-title">Domain Distribution</div>
+        </div>
+        <div class="viz-card"><canvas id="chart-stack" height="120"></canvas>
+          <div class="viz-card-title">Tech Stack Split</div>
+        </div>
+        <div class="viz-card"><canvas id="chart-years" height="120"></canvas>
+          <div class="viz-card-title">Career Growth</div>
+        </div>
+      </div> -->
+    </div>
+
+    <!-- AWARDS -->
+    <div class="section" id="awards">
+      <p class="sec-eyebrow reveal">Recognition</p>
+      <h2 class="sec-title reveal">Awards &amp; Honours</h2>
+      <div class="awards-grid stagger-children">
+        <div class="award">
+          <div class="award-icon">🏆</div>
+          <div class="award-body"><strong>Innovation Pride Award</strong>TCS · Feb 2021</div>
+        </div>
+        <div class="award">
+          <div class="award-icon">🥇</div>
+          <div class="award-body"><strong>Service &amp; Commitment Award</strong>TCS · Jan 2021</div>
+        </div>
+        <div class="award">
+          <div class="award-icon">⚡</div>
+          <div class="award-body"><strong>Technical Excellence Award</strong>TCS · Aug 2020</div>
+        </div>
+        <div class="award">
+          <div class="award-icon">🤝</div>
+          <div class="award-body"><strong>On the Spot (Team) Award</strong>TCS · Aug 2020</div>
+        </div>
+        <div class="award">
+          <div class="award-icon">👏</div>
+          <div class="award-body"><strong>Applause for Team Award</strong>TCS · Aug 2020</div>
+        </div>
+        <div class="award">
+          <div class="award-icon">🎯</div>
+          <div class="award-body"><strong>On The Spot Award</strong>TCS · June 2017</div>
+        </div>
+        <div class="award" style="grid-column:1/-1">
+          <div class="award-icon">🌟</div>
+          <div class="award-body"><strong>ILP LIREL — Best Associate During Training</strong>Tata Consultancy Services ·
+            July 2016</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section" id="contact">
+      <p class="sec-eyebrow reveal">Get in touch</p>
+      <h2 class="sec-title reveal">Let's Connect</h2>
+      <div class="contact-grid stagger-children">
+        <a class="c-card" href="/cdn-cgi/l/email-protection#7f111e0d1a0c170c17160c17160d3f061e171010511c1012">
+          <div class="c-icon">✉️</div>
+          <div class="c-lbl">Email</div>
+          <div class="c-val"><span class="__cf_email__"
+              data-cfemail="0b656a796e7863786362786362794b726a63646425686466">nareshshishir@yahoo.com</span></div>
+        </a>
+        <a class="c-card" href="tel:+918929962295">
+          <div class="c-icon">📱</div>
+          <div class="c-lbl">Mobile</div>
+          <div class="c-val">+91 8929962295</div>
+        </a>
+        <a class="c-card" href="https://www.linkedin.com/in/shishir-naresh/" target="_blank" rel="noopener">
+          <div class="c-icon">🔗</div>
+          <div class="c-lbl">LinkedIn</div>
+          <div class="c-val">shishir-naresh</div>
+        </a>
+        <div class="c-card">
+          <div class="c-icon">📍</div>
+          <div class="c-lbl">Location</div>
+          <div class="c-val">Noida, Uttar Pradesh, India</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>Portfolio of <span>Shishir Naresh</span> · AI/ML Engineer &amp; Data Scientist · UST</p>
+  </footer>
+
+  <!-- ═══════════════════ PROJECT MODALS ═══════════════════ -->
+  <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+    <div class="modal" id="modal-box">
+      <button class="modal-close" onclick="closeModalDirect()">✕ Close</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════ ADMIN PANEL ═══════════════════ -->
+  <div class="admin-overlay" id="admin-overlay" onclick="closeAdminOverlay(event)">
+    <div class="admin-panel">
+      <div class="admin-header">
+        <h2>⚙ Portfolio Admin</h2>
+        <button class="admin-close" onclick="closeAdmin()">✕ Close</button>
+      </div>
+      <div class="admin-tabs">
+        <button class="admin-tab active" onclick="switchTab('hero')">Hero</button>
+        <button class="admin-tab" onclick="switchTab('about')">About</button>
+        <button class="admin-tab" onclick="switchTab('skills')">Skills</button>
+        <button class="admin-tab" onclick="switchTab('projects')">Projects</button>
+        <button class="admin-tab" onclick="switchTab('contact')">Contact</button>
+      </div>
+
+      <!-- HERO TAB -->
+      <div class="admin-section active" id="tab-hero">
+        <div class="admin-row">
+          <div class="admin-field"><label>Full Name</label><input id="a-name" value="Shishir Naresh" /></div>
+          <div class="admin-field"><label>Current Role</label><input id="a-role"
+              value="Gen-AI · Knowledge Graphs · ETL · LifeSciences AI" /></div>
+        </div>
+        <div class="admin-field"><label>Hero Description</label><textarea
+            id="a-desc">8+ years at the intersection of software engineering and applied AI — building ML pipelines for genomics, Knowledge Graph systems in Neo4j, AI-powered chatbots, and cloud-native data platforms. Now targeting Senior Data Scientist, Gen-AI Engineer, and Research Scientist roles.</textarea>
+        </div>
+        <div class="admin-row">
+          <div class="admin-field"><label>Stat 1 — Years Experience</label><input id="a-s1" value="8+" type="text" />
+          </div>
+          <div class="admin-field"><label>Stat 2 — KG / ML Years</label><input id="a-s2" value="2+" type="text" /></div>
+        </div>
+        <div class="admin-field"><label>Stat 3 — Awards</label><input id="a-s3" value="7×" type="text" /></div>
+        <button class="admin-save-btn" onclick="saveHero()">💾 Save Hero</button>
+      </div>
+
+      <!-- ABOUT TAB -->
+      <div class="admin-section" id="tab-about">
+        <div class="admin-field"><label>About Paragraph 1</label><textarea
+            id="a-ab1">I'm a Data Scientist and Gen-AI Engineer with a deep background in full-stack engineering. My career has been centred on applying machine learning, semantic modelling, and cloud-native data engineering to real problems in LifeSciences, enterprise ITSM, and information security.</textarea>
+        </div>
+        <div class="admin-field"><label>About Paragraph 2</label><textarea
+            id="a-ab2">I have 2+ years of hands-on experience building Knowledge Graphs in Neo4j, integrating AI/ML solutions via Python REST APIs, and architecting ETL pipelines on AWS and Azure. My work on genomics platforms directly contributed to AI-driven insights for clinical research.</textarea>
+        </div>
+        <div class="admin-field"><label>About Paragraph 3</label><textarea
+            id="a-ab3">I'm now pursuing senior and research-oriented roles where I can apply RAG pipelines, LLM integration, graph-based AI, and advanced ML to high-impact problems. I bring the rare combination of production engineering rigour and data science depth.</textarea>
+        </div>
+        <button class="admin-save-btn" onclick="saveAbout()">💾 Save About</button>
+      </div>
+
+      <!-- SKILLS TAB -->
+      <div class="admin-section" id="tab-skills">
+        <div class="admin-note">💡 Edit skills as comma-separated values. Changes apply live on save.</div>
+        <div class="admin-field" style="margin-top:.8rem"><label>Gen-AI &amp; ML Tags</label><input id="sk-genai"
+            value="Python, Scikit-learn, LLM Integration, RAG Pipelines, Prompt Engineering, NLP, Image-to-Text AI, ML APIs" />
+        </div>
+        <div class="admin-field"><label>Graph &amp; Semantic Tags</label><input id="sk-graph"
+            value="Neo4j, Cypher, Knowledge Graphs, Semantic Modelling, ORM, TypeORM, Graph AI" /></div>
+        <div class="admin-field"><label>Cloud &amp; Data Eng Tags</label><input id="sk-cloud"
+            value="AWS, CloudWatch, Step Functions, Azure, ETL / Kettle, MySQL, MongoDB" /></div>
+        <div class="admin-field"><label>Backend Tags</label><input id="sk-be"
+            value="Java, Spring Boot, Node.js, Express.js, JWT, TypeScript, Bot Framework, REST API" /></div>
+        <div class="admin-field"><label>Database Tags</label><input id="sk-db"
+            value="Neo4j, MySQL, MariaDB, MongoDB, GridFS, SQL" /></div>
+        <div class="admin-field"><label>Research Tags</label><input id="sk-res"
+            value="Data Modelling, Analytical Thinking, LifeSciences, Genomics AI, HackerRank, Algorithms" /></div>
+        <button class="admin-save-btn" onclick="saveSkills()">💾 Save Skills</button>
+      </div>
+
+      <!-- PROJECTS TAB -->
+      <div class="admin-section" id="tab-projects">
+        <div class="admin-note">💡 Click a project to edit its full modal details. All changes persist for this session.
+        </div>
+        <div class="admin-proj-list" id="admin-proj-list" style="margin-top:.8rem">
+          <div class="admin-proj-item"><span>01 · Genomics Knowledge Graph Platform</span>
+            <div class="api-btns"><button class="api-btn edit" onclick="adminEditProj('kg')">Edit</button></div>
+          </div>
+          <div class="admin-proj-item"><span>02 · AI-Powered ITSM Chatbot</span>
+            <div class="api-btns"><button class="api-btn edit" onclick="adminEditProj('bot')">Edit</button></div>
+          </div>
+          <div class="admin-proj-item"><span>03 · Information Security ETL Dashboard</span>
+            <div class="api-btns"><button class="api-btn edit" onclick="adminEditProj('etl')">Edit</button></div>
+          </div>
+          <div class="admin-proj-item"><span>04 · Clinical Trial Digitalization</span>
+            <div class="api-btns"><button class="api-btn edit" onclick="adminEditProj('trial')">Edit</button></div>
+          </div>
+        </div>
+        <div id="proj-edit-form"
+          style="display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)">
+          <div class="admin-field"><label>Project Title</label><input id="pe-title" /></div>
+          <div class="admin-field"><label>Short Card Description</label><textarea id="pe-short"
+              style="min-height:60px"></textarea></div>
+          <div class="admin-field"><label>Modal — Full Description</label><textarea id="pe-full"></textarea></div>
+          <div class="admin-field"><label>Key Results / Impact (one per line)</label><textarea id="pe-results"
+              style="min-height:80px"></textarea></div>
+          <div class="admin-field"><label>Technologies (comma-separated)</label><input id="pe-tech" /></div>
+          <input type="hidden" id="pe-id" />
+          <button class="admin-save-btn" onclick="saveProjEdit()">💾 Save Project</button>
+        </div>
+      </div>
+
+      <!-- CONTACT TAB -->
+      <div class="admin-section" id="tab-contact">
+        <div class="admin-row">
+          <div class="admin-field"><label>Email</label><input id="c-email" value="nareshshishir@yahoo.com" /></div>
+          <div class="admin-field"><label>Mobile</label><input id="c-phone" value="+91 8929962295" /></div>
+        </div>
+        <div class="admin-row">
+          <div class="admin-field"><label>LinkedIn URL</label><input id="c-li"
+              value="https://www.linkedin.com/in/shishir-naresh-aa468b9a" /></div>
+          <div class="admin-field"><label>Location</label><input id="c-loc" value="Noida, Uttar Pradesh, India" /></div>
+        </div>
+        <div class="admin-field"><label>GitHub URL (optional)</label><input id="c-gh" value="" /></div>
+        <button class="admin-save-btn" onclick="saveContact()">💾 Save Contact</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast">✓ Saved successfully</div>
+
+  <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <script>
+    (function() {
+      var now      = new Date();
+      var totalYrs = Math.floor((now - new Date(2016, 0, 1)) / (1000*60*60*24*365.25));
+      var dsYrs    = Math.floor((now - new Date(2019, 4, 1)) / (1000*60*60*24*365.25));
+      document.getElementById('stat-yrs').textContent = totalYrs + '+';
+      document.getElementById('stat-kg').textContent  = dsYrs + '+';
+      // stat-aw is already set to 7× in HTML, no update needed
+    })();
+    /* ══════════════════════════════════════
+       PROJECT DATA
+    ══════════════════════════════════════ */
+    // const projects = {
+    //   kg: {
+    //     title: 'Genomics Knowledge Graph Platform',
+    //     subtitle: 'LifeSciences · AI/ML · Graph Database Research',
+    //     short: 'End-to-end KG system for LifeSciences genomics research — ingestion, semantic modelling, and interactive visualisation.',
+    //     full: 'Designed and built a production-grade Knowledge Graph system for a major LifeSciences genomics platform at TCS. The system ingests genomic entities (genes, proteins, pathways, phenotypes) and their relationships from multiple biological data sources into a Neo4j graph database, enabling researchers to query complex biological networks using Cypher.\n\nBuilt an interactive visualisation UI allowing scientists to explore the knowledge graph in real time — identifying gene-disease associations, drug targets, and research pathways that would be invisible in tabular data.\n\nThis project directly informed AI-driven genomic research and represents 2+ years of deep work in semantic data modelling.',
+    //     results: ['Ingested and modelled 5+ genomic data source types into a unified Knowledge Graph', 'Built interactive Neo4j Cypher-powered graph exploration UI for research scientists', 'Integrated Python AI/ML models as REST APIs for biomarker prediction on graph data', 'Reduced researcher data-discovery time through graph-native querying vs. traditional SQL'],
+    //     tech: ['Neo4j', 'Cypher', 'Spring Boot', 'Python', 'Java', 'REST API', 'JWT', 'ORM'],
+    //     impactNum: '2+', impactLbl: 'Years of deep KG work', impactNum2: '5+', impactLbl2: 'Data sources unified'
+    //   },
+    //   bot: {
+    //     title: 'AI-Powered ITSM Chatbot Platform',
+    //     subtitle: 'Enterprise AI · Azure Cloud · NLP Engineering',
+    //     short: 'Enterprise chatbot with Image-to-Text AI inference, ServiceNow integration, voice channel, and multi-cloud deployment.',
+    //     full: 'Developed a sophisticated enterprise ITSM chatbot at TCS for a global client, integrating multiple AI and cloud services to automate IT service management workflows.\n\nThe standout feature was a cloud-based Image-to-Text AI integration — users could upload screenshots of error messages and the system would automatically analyse the image, extract the error text, and create a formatted ServiceNow ticket, removing the manual ticket-creation burden entirely.\n\nThe system was deployed across Microsoft Teams, Skype, and Directline channels, with a Cortana voice interface for hands-free interaction. Azure cloud infrastructure managed the full deployment pipeline.',
+    //     results: ['Reduced manual ticket creation time through Image-to-Text AI automation', 'Multi-channel deployment: MS Teams, Skype, Cortana voice, Directline', 'JWT-based user session management with configurable bot timeout logic', 'TypeORM data modelling for structured interaction history and analytics'],
+    //     tech: ['Node.js', 'Bot Framework', 'Azure', 'JWT', 'TypeORM', 'ServiceNow API', 'Image-to-Text AI', 'Cortana'],
+    //     impactNum: '4+', impactLbl: 'Deployment channels', impactNum2: 'AI', impactLbl2: 'Image-to-ticket automation'
+    //   },
+    //   etl: {
+    //     title: 'Information Security ETL Dashboard',
+    //     subtitle: 'Data Engineering · AWS · Cloud Analytics',
+    //     short: 'Cloud-native ETL platform ingesting multi-source security telemetry with AWS Step Functions orchestration and live analytics.',
+    //     full: 'At Accenture, architected and built a cloud-native ETL data platform to centralise information security data from multiple heterogeneous sources into a unified MySQL database — enabling security analysts and leadership to monitor risk posture through a single dashboard.\n\nThe platform uses Python-based ETL pipelines orchestrated by AWS Step Functions, with AWS CloudWatch providing full observability into execution health, data quality, and pipeline failures.\n\nContinuously maintained and evolved through RFC-driven bug fixes and enhancements, ensuring reliable data delivery for security decision-making.',
+    //     results: ['Centralised data from multiple disparate security sources into one analytics store', 'AWS Step Functions orchestration for pipeline scheduling, retries, and error handling', 'CloudWatch dashboards and alarms for real-time pipeline health monitoring', 'Ongoing RFC pipeline improvements increasing data fidelity and platform reliability'],
+    //     tech: ['Python', 'MySQL', 'AWS', 'Step Functions', 'CloudWatch', 'TypeScript', 'Kettle ETL'],
+    //     impactNum: 'Multi', impactLbl: 'Source data unified', impactNum2: 'AWS', impactLbl2: 'Cloud-native orchestration'
+    //   },
+    //   trial: {
+    //     title: 'Clinical Trial Digitalization',
+    //     subtitle: 'LifeSciences · Data Sync · Multimedia Engineering',
+    //     short: 'Multi-source data synchronisation system and GridFS MongoDB streaming API for digitising clinical trial workflows.',
+    //     full: 'Part of a TCS LifeSciences team digitalising the end-to-end clinical trial process for a global pharmaceutical client. The project replaced manual, paper-heavy workflows with a unified digital platform.\n\nBuilt a data synchronisation engine that pulled data from multiple clinical trial sources — lab systems, investigator portals, and regulatory submissions — and made it available at a single place for analysis, reducing data silos that previously delayed trial oversight.\n\nDesigned and implemented a multimedia REST API using GridFS MongoDB for chunk-based upload and streaming of large media files (clinical imaging, trial recordings) — enabling smooth playback for any user without buffering issues.',
+    //     results: ['Synchronised multi-source clinical trial data into a unified analytical platform', 'GridFS MongoDB chunked streaming API for large multimedia clinical data files', 'Codebase performance optimisation reducing execution time across the platform', 'Led ILP team — awarded ILP LIREL Best Associate During Training'],
+    //     tech: ['Java', 'MongoDB', 'GridFS', 'Node.js', 'REST API', 'Spring Boot', 'Linux'],
+    //     impactNum: 'ILP', impactLbl: 'LIREL Best Associate', impactNum2: 'Multi', impactLbl2: 'Clinical data sources synced'
+    //   }
+    // };
+
+    const projects = {
+      kg: {
+        title: 'Genomics Knowledge Graph Platform',
+        subtitle: 'LifeSciences · Graph AI · RAG Research',
+        short: 'End-to-end KG system for LifeSciences genomics research — semantic modelling, RAG pipeline, and interactive graph visualisation.',
+        full: 'Designed and built a production-grade Knowledge Graph system for a major LifeSciences genomics platform at TCS. The system ingests genomic entities (genes, proteins, pathways, phenotypes) and their relationships from multiple biological data sources into a Neo4j graph database, enabling researchers to query complex biological networks using Cypher.\n\nArchitected a Retrieval-Augmented Generation (RAG) pipeline on top of the Knowledge Graph — using Neo4j as the graph store, vector embeddings for semantic retrieval, and an LLM layer for synthesis — enabling natural-language Q&A over complex biological datasets.\n\nBuilt classical ML models (random forest, gradient boosting) for biomarker classification served via Flask REST APIs. Applied statistical modelling — survival analysis, clustering, PCA/t-SNE — to derive insight from high-dimensional genomic feature sets.',
+        results: [
+          'Ingested 5+ genomic data source types into a unified Knowledge Graph in Neo4j',
+          'Built RAG pipeline enabling natural-language Q&A over genomic literature and clinical data',
+          'Trained biomarker classification models served via Flask REST APIs',
+          'Applied survival analysis and PCA/t-SNE on high-dimensional genomic feature sets',
+          'Delivered interactive Cypher-powered graph visualisation UI for research scientists'
+        ],
+        tech: ['Neo4j', 'Cypher', 'Python', 'RAG', 'LLM', 'Flask', 'Scikit-learn', 'Vector Embeddings', 'REST API', 'NLP'],
+        impactNum: '2+', impactLbl: 'Years of deep KG work',
+        impactNum2: '5+', impactLbl2: 'Data sources unified'
+      },
+
+      bot: {
+        title: 'AI-Powered ITSM Chatbot Platform',
+        subtitle: 'Gen-AI · Tool Orchestration · Azure Cloud',
+        short: 'Enterprise chatbot with Image-to-Text AI inference, ServiceNow integration, voice channel, and multi-channel Azure deployment.',
+        full: 'Designed and implemented an LLM-powered ITSM chatbot at TCS for a global Telecom client, with a multi-tool orchestration architecture routing user intent to the correct downstream tool — a direct precursor to modern agentic AI patterns.\n\nThe standout feature was a cloud-based Image-to-Text AI integration — users could upload screenshots of error messages and the system would automatically analyse the image, extract the error text, and create a formatted ServiceNow ticket, removing the manual ticket-creation burden entirely.\n\nImplemented session context management and conversation history storage for coherent multi-turn dialogue. Deployed across Microsoft Teams, Skype, Cortana voice, and Directline channels on Azure with zero-downtime multi-channel infrastructure.',
+        results: [
+          'Built LLM chatbot with function-calling / tool-use architecture — precursor to modern agentic AI',
+          'Integrated Image-to-Text AI for fully automated ticket creation from error screenshots',
+          'Implemented multi-turn session context management for coherent dialogue across channels',
+          'Deployed on MS Teams, Skype, Cortana voice and Directline via Azure cloud infrastructure',
+          'Integrated ServiceNow API for end-to-end automated ITSM ticket lifecycle management'
+        ],
+        tech: ['Python', 'Node.js', 'Bot Framework', 'LLM Orchestration', 'Azure', 'Image-to-Text AI', 'ServiceNow API', 'JWT', 'TypeScript'],
+        impactNum: '4+', impactLbl: 'Deployment channels',
+        impactNum2: 'AI', impactLbl2: 'Image-to-ticket automation'
+      },
+
+      etl: {
+        title: 'Information Security ETL Dashboard',
+        subtitle: 'Data Engineering · AWS · Cybersecurity Analytics',
+        short: 'Cloud-native ETL platform ingesting multi-source security telemetry with statistical anomaly detection and AWS Step Functions orchestration.',
+        full: 'At Accenture, architected and built a cloud-native ETL data platform to centralise information security telemetry from multiple heterogeneous sources into a unified MySQL database — enabling security analysts and leadership to monitor risk posture through a single analytics dashboard.\n\nDesigned and deployed statistical anomaly-detection models (isolation forest, z-score baselines, time-series decomposition) on the ingested security data to surface threats in near real-time. Exposed ML model outputs as REST microservices using FastAPI and Flask.\n\nPython-based ETL pipelines orchestrated by AWS Step Functions with CloudWatch providing full observability into execution health, data quality, and pipeline failures.',
+        results: [
+          'Centralised multi-source security telemetry into a unified MySQL analytical store',
+          'Deployed statistical anomaly-detection models (isolation forest, z-score, time-series) in near real-time',
+          'Exposed ML predictions via FastAPI and Flask REST microservices to downstream dashboards',
+          'AWS Step Functions orchestration with CloudWatch alerting for drift and data-quality failures',
+          'Ongoing RFC pipeline improvements increasing data fidelity and platform reliability'
+        ],
+        tech: ['Python', 'FastAPI', 'Flask', 'MySQL', 'AWS', 'Step Functions', 'CloudWatch', 'Kettle ETL', 'Scikit-learn', 'TypeScript'],
+        impactNum: 'Multi', impactLbl: 'Source data unified',
+        impactNum2: 'AWS', impactLbl2: 'Cloud-native orchestration'
+      },
+
+      trial: {
+        title: 'Clinical Trial Digitalization',
+        subtitle: 'LifeSciences · Data Engineering · ETL',
+        short: 'Multi-source clinical trial data synchronisation pipeline and GridFS MongoDB multimedia streaming API for digitising trial workflows.',
+        full: 'Part of a TCS LifeSciences team digitalising the end-to-end clinical trial process for a global pharmaceutical client, replacing manual paper-heavy workflows with a unified digital platform.\n\nBuilt a data synchronisation engine aggregating clinical trial data from multiple heterogeneous sources — lab systems, investigator portals, and regulatory submissions — into a unified analytical store. Applied statistical data-quality checks (distribution tests, outlier detection, completeness scoring) at each ingestion stage.\n\nDesigned and implemented a multimedia REST API using GridFS MongoDB for chunk-based upload and streaming of large clinical media files. Optimised the entire codebase to significantly reduce execution time. Led the ILP project team — awarded ILP LIREL Best Associate During Training.',
+        results: [
+          'Synchronised multi-source clinical trial data into a unified analytical platform via ETL pipelines',
+          'Applied statistical quality checks (distribution tests, outlier detection) at each ingestion stage',
+          'Built GridFS MongoDB chunked streaming API for clinical imaging and multimedia trial data',
+          'Codebase performance optimisation reducing execution time significantly across the platform',
+          'Led ILP team — awarded ILP LIREL Best Associate During Training'
+        ],
+        tech: ['Python', 'Node.js', 'MongoDB', 'GridFS', 'REST API', 'ETL', 'Statistical QA', 'Linux'],
+        impactNum: 'ILP', impactLbl: 'LIREL Best Associate',
+        impactNum2: 'Multi', impactLbl2: 'Clinical data sources synced'
+      },
+
+      agentic: {
+        title: 'Agentic AI Chatbot with Tool Orchestration',
+        subtitle: 'Gen-AI · LangGraph · Multi-Tool Agentic AI',
+        short: 'LLM-powered agentic chatbot orchestrating 6+ tools via intent detection, with domain-specific RAG for Telecom customer documentation.',
+        full: 'Designed and developed an agentic AI chatbot at UST for a Telecom domain client, capable of orchestrating more than 6 integrated tools dynamically based on user intent — triggering single or multiple tools in sequence or parallel depending on the complexity of the request.\n\nBuilt using LangGraph to model the agent workflow as a directed graph — enabling conditional branching, tool-call loops, and structured state management across multi-turn conversations. Applied advanced design patterns (ReAct, Plan-and-Execute) for robust agent reasoning.\n\nIntegrated a RAG pipeline over Telecom customer-centric documentation, enabling the chatbot to answer domain-specific queries with grounded, citation-backed responses. The system intelligently switches between tool execution and knowledge retrieval based on query classification.',
+        results: [
+          'Orchestrated 6+ tools dynamically using LangGraph agent workflow with intent-based routing',
+          'Applied ReAct and Plan-and-Execute design patterns for robust multi-step agent reasoning',
+          'Built RAG pipeline over Telecom documentation for grounded domain-specific Q&A',
+          'Implemented parallel and sequential tool execution based on request complexity',
+          'Structured state management across multi-turn conversations with full context retention'
+        ],
+        tech: ['Python', 'LangGraph', 'LLM', 'RAG', 'Tool Orchestration', 'Agentic AI', 'Vector DBs', 'Prompt Engineering', 'FastAPI'],
+        impactNum: '6+', impactLbl: 'Tools orchestrated',
+        impactNum2: 'RAG', impactLbl2: 'Domain Q&A pipeline'
+      },
+
+      rag: {
+        title: 'Document Ingestion Platform — RAG Database',
+        subtitle: 'RAG · Vector DB · Document Intelligence',
+        short: 'Platform to ingest, update and delete documents into a Qdrant RAG database with multiple ingestion strategies for different document types.',
+        full: 'Designed and developed a production-grade document ingestion platform at UST enabling full lifecycle management of documents inside a Qdrant vector database — supporting create, update, and delete operations with metadata tracking.\n\nDeveloped multiple ingestion strategies tailored to different document types — structured PDFs, tabular data, unstructured text, and HTML content — each with its own chunking strategy, embedding pipeline, and metadata schema to optimise retrieval quality.\n\nThe platform handles document versioning, deduplication, and incremental updates so that the RAG database always reflects the latest state of the source documents without requiring full re-ingestion.',
+        results: [
+          'Built full CRUD document lifecycle management for a Qdrant vector database',
+          'Developed multiple ingestion strategies for PDFs, tabular, unstructured text, and HTML content',
+          'Implemented document versioning, deduplication, and incremental update pipelines',
+          'Optimised chunking and embedding strategies per document type for retrieval quality',
+          'Production-ready ingestion platform powering downstream RAG chatbot applications'
+        ],
+        tech: ['Python', 'Qdrant', 'RAG', 'LLM', 'Vector Embeddings', 'FastAPI', 'Document Chunking', 'Embedding Models'],
+        impactNum: 'Multi', impactLbl: 'Ingestion strategies',
+        impactNum2: 'Qdrant', impactLbl2: 'Vector DB platform'
+      },
+
+      pole: {
+        title: 'Pole Detection — GCP Vertex AI Pipeline',
+        subtitle: 'Computer Vision · GCP · Vertex AI',
+        short: 'End-to-end GCP AI pipeline detecting utility poles in Google Street View images using Vertex AI, triggered by geo-coordinates.',
+        full: 'Developed a fully automated GCP AI pipeline at UST for detecting utility poles in Google Street View imagery, triggered by geo-coordinates passed at pipeline invocation. The pipeline fetches the relevant street view images for the given coordinates, runs inference using a Vertex AI Vision model, and stores structured detection results in GCP Storage buckets upon completion.\n\nArchitected the pipeline using GCP Cloud Run Functions for serverless execution, Cloud Task Queues for reliable async job scheduling, and Vertex AI for model hosting and inference. The system handles batched geo-coordinate inputs, parallel image fetching, and graceful failure handling with retry logic.\n\nResults are stored in structured JSON format in GCP buckets, ready for downstream consumption by mapping and infrastructure analytics teams.',
+        results: [
+          'Built end-to-end serverless GCP pipeline: geo-coordinates → Street View fetch → Vertex AI inference → bucket storage',
+          'Used GCP Cloud Run Functions for scalable serverless execution of each pipeline stage',
+          'Implemented Cloud Task Queues for reliable async job scheduling with retry and failure handling',
+          'Vertex AI Vision model for pole detection across batched geo-coordinate inputs',
+          'Structured JSON results stored in GCP buckets for downstream infrastructure analytics'
+        ],
+        tech: ['Python', 'GCP', 'Vertex AI', 'Cloud Run Functions', 'Cloud Task Queue', 'GCP Storage', 'Computer Vision', 'LLM'],
+        impactNum: 'GCP', impactLbl: 'Serverless pipeline',
+        impactNum2: 'CV', impactLbl2: 'Pole detection at scale'
+      }
+    };
+
+    /* compact donut — LifeSciences 6yr · Cybersecurity 2yr · Telecom 2yr */
+    const domainData = [
+      { label: 'LifeSciences', yrs: '6 yrs', pct: 60, color: '#38bdf8' },
+      { label: 'Cybersecurity', yrs: '2 yrs', pct: 20, color: '#34d399' },
+      { label: 'Telecom',       yrs: '2+ yrs', pct: 20, color: '#a78bfa' },
+    ];
+
+    /* Dynamic total year label in centre of donut */
+    const domainYrsLabel = document.getElementById('domain-yrs-label');
+    if (domainYrsLabel) {
+      const totalYrsDomain = Math.floor((new Date() - new Date(2016, 0, 1)) / (1000 * 60 * 60 * 24 * 365.25));
+      domainYrsLabel.innerHTML = totalYrsDomain + '+<br>yrs';
+    }
+
+    const dcCanvas = document.getElementById('domain-chart');
+    dcCanvas.width = 160; dcCanvas.height = 160;
+
+    const existingChart = Chart.instances
+      ? Object.values(Chart.instances).find(c => c.canvas === dcCanvas)
+      : null;
+    if (existingChart) existingChart.destroy();
+
+    new Chart(dcCanvas, {
+      type: 'doughnut',
+      data: {
+        labels: domainData.map(d => d.label + ' (' + d.yrs + ')'),
+        datasets: [{ data: domainData.map(d => d.pct), backgroundColor: domainData.map(d => d.color), borderWidth: 0, hoverOffset: 4 }]
+      },
+      options: {
+        cutout: '68%', responsive: false,
+        animation: { duration: 1000 },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.label + ' — ' + ctx.parsed + '%' } } }
+      }
+    });
+
+    /* domain pills — label + years + percentage */
+    const pillContainer = document.getElementById('domain-pills');
+    if (pillContainer) {
+      pillContainer.innerHTML = domainData.map(d => `
+        <div style="display:flex;align-items:center;gap:.38rem;padding:.32rem .55rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:5px;">
+          <span style="width:7px;height:7px;border-radius:50%;background:${d.color};flex-shrink:0;"></span>
+          <span style="font-family:var(--fm);font-size:.6rem;color:#8494b4;line-height:1.3;">${d.label}<br>
+            <strong style="color:#dde6f5;font-size:.65rem;">${d.yrs} · ${d.pct}%</strong>
+          </span>
+        </div>`).join('');
+    }
+    /* ══════════════════════════════════════
+       PROJECT MODAL
+    ══════════════════════════════════════ */
+    function openModal(id) {
+      const p = projects[id];
+      if (!p) return;
+      const content = document.getElementById('modal-content');
+      content.innerHTML = `
+    <div class="modal-tag-row">${p.tech.slice(0, 4).map(t => `<span class="tag">${t}</span>`).join('')}</div>
+    <div class="modal-title">${p.title}</div>
+    <div class="modal-subtitle">${p.subtitle}</div>
+    <p>${p.full.replace(/\n\n/g, '</p><p style="margin-top:.9rem">').replace(/\n/g, '<br>')}</p>
+    <div class="modal-section-title">Key Results &amp; Impact</div>
+    <ul>${p.results.map(r => `<li><strong>${r.split(' ').slice(0, 3).join(' ')}</strong> ${r.split(' ').slice(3).join(' ')}</li>`).join('')}</ul>
+    <div class="modal-impact">
+      <div class="impact-box"><div class="impact-num">${p.impactNum}</div><div class="impact-lbl">${p.impactLbl}</div></div>
+      <div class="impact-box"><div class="impact-num" style="color:var(--c2)">${p.impactNum2}</div><div class="impact-lbl">${p.impactLbl2}</div></div>
+    </div>
+    <div class="modal-section-title">Full Tech Stack</div>
+    <div class="tags">${p.tech.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+  `;
+      document.getElementById('modal-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(e) { if (e.target === document.getElementById('modal-overlay')) closeModalDirect(); }
+    function closeModalDirect() { document.getElementById('modal-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+
+    /* ══════════════════════════════════════
+       ADMIN PANEL
+    ══════════════════════════════════════ */
+    function openAdmin() { document.getElementById('admin-overlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function closeAdmin() { document.getElementById('admin-overlay').classList.remove('open'); document.body.style.overflow = ''; }
+    function closeAdminOverlay(e) { if (e.target === document.getElementById('admin-overlay')) closeAdmin(); }
+
+    function switchTab(id) {
+      document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('tab-' + id).classList.add('active');
+    }
+
+    function showToast(msg = '✓ Saved') {
+      const t = document.getElementById('toast');
+      t.textContent = msg; t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), 2500);
+    }
+
+    function saveHero() {
+      document.querySelector('h1.hero-name').innerHTML = document.getElementById('a-name').value.replace(' ', '<br><em>').replace(/(.+)<br><em>(.+)/, '$1<br><em>$2</em>');
+      document.querySelector('.hero-tagline').textContent = document.getElementById('a-role').value;
+      document.querySelector('.hero-desc').textContent = document.getElementById('a-desc').value;
+      showToast('✓ Hero updated');
+    }
+
+    function saveAbout() {
+      const ps = document.querySelectorAll('.about-text p');
+      if (ps[0]) ps[0].innerHTML = document.getElementById('a-ab1').value;
+      if (ps[1]) ps[1].innerHTML = document.getElementById('a-ab2').value;
+      if (ps[2]) ps[2].innerHTML = document.getElementById('a-ab3').value;
+      showToast('✓ About updated');
+    }
+
+    function saveSkills() {
+      const map = [
+        { id: 'sk-genai', idx: 0, cls: '' },
+        { id: 'sk-graph', idx: 1, cls: 'g' },
+        { id: 'sk-cloud', idx: 2, cls: 'v' },
+        { id: 'sk-be', idx: 3, cls: '' },
+        { id: 'sk-db', idx: 4, cls: 'a' },
+        { id: 'sk-res', idx: 5, cls: 'g' },
+      ];
+      const cards = document.querySelectorAll('#skills-grid .sk-card');
+      map.forEach(({ id, idx, cls }) => {
+        const val = document.getElementById(id).value;
+        const tags = val.split(',').map(s => s.trim()).filter(Boolean);
+        const container = cards[idx]?.querySelector('.tags');
+        if (container) container.innerHTML = tags.map(t => `<span class="tag ${cls}">${t}</span>`).join('');
+      });
+      showToast('✓ Skills updated');
+    }
+
+    let editingProjId = null;
+    function adminEditProj(id) {
+      editingProjId = id;
+      const p = projects[id];
+      document.getElementById('pe-title').value = p.title;
+      document.getElementById('pe-short').value = p.short;
+      document.getElementById('pe-full').value = p.full;
+      document.getElementById('pe-results').value = p.results.join('\n');
+      document.getElementById('pe-tech').value = p.tech.join(', ');
+      document.getElementById('pe-id').value = id;
+      document.getElementById('proj-edit-form').style.display = 'block';
+    }
+
+    function saveProjEdit() {
+      const id = document.getElementById('pe-id').value;
+      projects[id].title = document.getElementById('pe-title').value;
+      projects[id].short = document.getElementById('pe-short').value;
+      projects[id].full = document.getElementById('pe-full').value;
+      projects[id].results = document.getElementById('pe-results').value.split('\n').filter(Boolean);
+      projects[id].tech = document.getElementById('pe-tech').value.split(',').map(s => s.trim()).filter(Boolean);
+      // Update card
+      const cards = document.querySelectorAll('.proj-card');
+      const ids = ['kg', 'bot', 'etl', 'trial'];
+      const idx = ids.indexOf(id);
+      if (idx > -1 && cards[idx]) {
+        cards[idx].querySelector('h3').textContent = projects[id].title;
+        cards[idx].querySelector('p').textContent = projects[id].short;
+      }
+      document.getElementById('proj-edit-form').style.display = 'none';
+      showToast('✓ Project updated');
+    }
+
+    function saveContact() {
+      const email = document.getElementById('c-email').value;
+      const phone = document.getElementById('c-phone').value;
+      const li = document.getElementById('c-li').value;
+      const loc = document.getElementById('c-loc').value;
+      const gh = document.getElementById('c-gh').value;
+      const cards = document.querySelectorAll('.c-card');
+      if (cards[0]) { cards[0].href = 'mailto:' + email; cards[0].querySelector('.c-val').textContent = email; }
+      if (cards[1]) { cards[1].href = 'tel:' + phone; cards[1].querySelector('.c-val').textContent = phone; }
+      if (cards[2]) { cards[2].href = li; cards[2].querySelector('.c-val').textContent = li.split('/').filter(Boolean).pop(); }
+      if (cards[3]) { cards[3].querySelector('.c-val').textContent = loc; }
+      showToast('✓ Contact updated');
+    }
+
+    /* ══════════════════════════════════════
+       BG PARTICLE NETWORK (Canvas 2D)
+    ══════════════════════════════════════ */
+    (function () {
+      const canvas = document.getElementById('bg-canvas');
+      const ctx = canvas.getContext('2d');
+      let W, H;
+      function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+      resize();
+      window.addEventListener('resize', resize);
+
+      const N = 80;
+      const pts = Array.from({ length: N }, () => ({
+        x: Math.random() * 1400 - 200, y: Math.random() * 900 - 100,
+        vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35,
+        r: Math.random() * 1.8 + .6
+      }));
+      let mx = W / 2, my = H / 2;
+      window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+
+      const DIST = 130;
+      (function tick() {
+        requestAnimationFrame(tick);
+        ctx.clearRect(0, 0, W, H);
+        pts.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < -50 || p.x > W + 50) p.vx *= -1;
+          if (p.y < -50 || p.y > H + 50) p.vy *= -1;
+        });
+        // parallax nudge toward mouse
+        pts.forEach(p => {
+          p.x += (mx - W / 2) * 0.00012;
+          p.y += (my - H / 2) * 0.00012;
+        });
+        for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) {
+          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
+          const d = Math.sqrt(dx * dx + dy * dy);
+          if (d < DIST) {
+            ctx.beginPath();
+            ctx.moveTo(pts[i].x, pts[i].y);
+            ctx.lineTo(pts[j].x, pts[j].y);
+            ctx.strokeStyle = `rgba(56,189,248,${(1 - d / DIST) * 0.12})`;
+            ctx.lineWidth = .6;
+            ctx.stroke();
+          }
+        }
+        pts.forEach(p => {
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(56,189,248,0.35)';
+          ctx.fill();
+        });
+      })();
+    })();
+
+    /* ══════════════════════════════════════
+       KNOWLEDGE GRAPH GLOBE (Canvas 2D)
+    ══════════════════════════════════════ */
+    (function () {
+      var canvas = document.getElementById('globe-canvas');
+      if (!canvas) { return; }
+      var ctx = canvas.getContext('2d');
+      if (!ctx) { return; }
+
+      var S = 320, CX = 160, CY = 160, R = 112;
+      canvas.width = S; canvas.height = S;
+
+      var LABELS = ['Neo4j', 'Python', 'RAG', 'LLM', 'Flask', 'FastAPI', 'ETL', 'Azure', 'AWS', 'Genomics', 'KG', 'Cypher', 'ML', 'NLP', 'Deep Learning', 'Cloud', 'GCP', 'Tensorflow','Classical ML', 'Statistics'];
+      var PALETTE = ['#38bdf8', '#34d399', '#a78bfa', '#fb923c'];
+      var CMAP = { '#38bdf8': '56,189,248', '#34d399': '52,211,153', '#a78bfa': '167,139,250', '#fb923c': '251,146,60' };
+
+      // Build nodes on sphere surface (Fibonacci lattice)
+      var nodes = [];
+      for (var i = 0; i < LABELS.length; i++) {
+        var phi = Math.acos(1 - 2 * (i + 0.5) / LABELS.length);
+        var theta = Math.PI * (1 + Math.sqrt(5)) * i;
+        nodes.push({
+          lbl: LABELS[i],
+          col: PALETTE[i % PALETTE.length],
+          x0: Math.sin(phi) * Math.cos(theta),
+          y0: Math.sin(phi) * Math.sin(theta),
+          z0: Math.cos(phi),
+          big: i < 21
+        });
+      }
+      // console.log('nodes', nodes);
+      // Fixed edges (index pairs)
+      var EDGES = [[0, 2], [0, 10], [0, 13], [1, 2], [1, 4], [1, 5], [2, 11], [2, 12], [3, 4], [3, 12], [4, 5], [6, 7], [6, 8], [7, 8], [9, 10], [9, 13], [11, 13]];
+
+      var rotY = 0, rotX = 0.2, velX = 0, velY = 0;
+      var drag = false, lastX = 0, lastY = 0;
+
+      canvas.onmousedown = function (e) { drag = true; lastX = e.clientX; lastY = e.clientY; };
+      document.onmouseup = function () { drag = false; };
+      document.onmousemove = function (e) {
+        if (!drag) return;
+        velX = (e.clientX - lastX) * 0.013;
+        velY = (e.clientY - lastY) * 0.013;
+        rotY += velX; rotX += velY;
+        lastX = e.clientX; lastY = e.clientY;
+      };
+      canvas.ontouchstart = function (e) { drag = true; lastX = e.touches[0].clientX; lastY = e.touches[0].clientY; };
+      canvas.ontouchend = function () { drag = false; };
+      canvas.ontouchmove = function (e) {
+        if (!drag) return;
+        velX = (e.touches[0].clientX - lastX) * 0.013;
+        velY = (e.touches[0].clientY - lastY) * 0.013;
+        rotY += velX; rotX += velY;
+        lastX = e.touches[0].clientX; lastY = e.touches[0].clientY;
+        e.preventDefault();
+      };
+
+      function project(x, y, z) {
+        // Rotate around Y axis
+        var cosY = Math.cos(rotY), sinY = Math.sin(rotY);
+        var rx = x * cosY - z * sinY;
+        var rz = x * sinY + z * cosY;
+        // Rotate around X axis
+        var cosX = Math.cos(rotX), sinX = Math.sin(rotX);
+        var ry = y * cosX - rz * sinX;
+        var rz2 = y * sinX + rz * cosX;
+        // Perspective divide
+        var d = 1 / (2 - rz2 * 0.4);
+        return { sx: CX + rx * R * d, sy: CY + ry * R * d, z: rz2, sc: d };
+      }
+
+      function draw() {
+        requestAnimationFrame(draw);
+        if (!drag) { velX *= 0.88; velY *= 0.88; rotY += velX; rotX += velY; rotY += 0.007; }
+
+        ctx.clearRect(0, 0, S, S);
+
+        // Sphere outline
+        ctx.beginPath(); ctx.arc(CX, CY, R, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(56,189,248,0.07)'; ctx.lineWidth = 1; ctx.stroke();
+
+        // Project nodes
+        var proj = nodes.map(function (n) {
+          var p = project(n.x0, n.y0, n.z0);
+          return { sx: p.sx, sy: p.sy, z: p.z, sc: p.sc, lbl: n.lbl, col: n.col, big: n.big, rgb: CMAP[n.col] || '56,189,248' };
+        });
+
+        // Edges
+        for (var e = 0; e < EDGES.length; e++) {
+          var a = proj[EDGES[e][0]], b = proj[EDGES[e][1]];
+          if (a.z < -0.1 && b.z < -0.1) continue;
+          var al = Math.max(0, (a.z + b.z) * 0.25 + 0.06);
+          ctx.beginPath(); ctx.moveTo(a.sx, a.sy); ctx.lineTo(b.sx, b.sy);
+          ctx.strokeStyle = 'rgba(56,189,248,' + al.toFixed(2) + ')';
+          ctx.lineWidth = 0.7; ctx.stroke();
+        }
+
+        // Spokes to center
+        for (var i = 0; i < proj.length; i++) {
+          var p = proj[i]; if (p.z < 0) continue;
+          var al = (p.z * 0.07).toFixed(2);
+          ctx.beginPath(); ctx.moveTo(CX, CY); ctx.lineTo(p.sx, p.sy);
+          ctx.strokeStyle = 'rgba(56,189,248,' + al + ')'; ctx.lineWidth = 0.4; ctx.stroke();
+        }
+
+        // Nodes back-to-front
+        var sorted = proj.slice().sort(function (a, b) { return a.z - b.z; });
+        for (var i = 0; i < sorted.length; i++) {
+          var p = sorted[i];
+          var vis = p.z > -0.2;
+          var al = vis ? Math.min(1, p.z + 0.65) : 0.12;
+          var r = (p.big ? 5.5 : 3.8) * p.sc * 1.8;
+
+          // Soft glow for front nodes
+          if (vis && p.z > 0.15) {
+            var gr = ctx.createRadialGradient(p.sx, p.sy, 0, p.sx, p.sy, r * 2.8);
+            gr.addColorStop(0, 'rgba(' + p.rgb + ',' + (al * 0.18).toFixed(2) + ')');
+            gr.addColorStop(1, 'rgba(' + p.rgb + ',0)');
+            ctx.beginPath(); ctx.arc(p.sx, p.sy, r * 2.8, 0, Math.PI * 2);
+            ctx.fillStyle = gr; ctx.fill();
+          }
+
+          // Dot
+          ctx.beginPath(); ctx.arc(p.sx, p.sy, r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(' + p.rgb + ',' + al.toFixed(2) + ')'; ctx.fill();
+
+          // Label
+          if (p.z > 0.08 && p.big) {
+            var fs = Math.round(8 * p.sc * 1.5 + 6);
+            ctx.font = fs + 'px "IBM Plex Mono",monospace';
+            ctx.fillStyle = 'rgba(221,230,245,' + (al * 0.9).toFixed(2) + ')';
+            ctx.textAlign = 'center';
+            ctx.fillText(p.lbl, p.sx, p.sy - r - 3);
+          }
+        }
+
+        // Centre core
+        ctx.beginPath(); ctx.arc(CX, CY, 5.5, 0, Math.PI * 2);
+        ctx.fillStyle = '#38bdf8'; ctx.fill();
+        ctx.beginPath(); ctx.arc(CX, CY, 11, 0, Math.PI * 2);
+        ctx.strokeStyle = 'rgba(56,189,248,0.35)'; ctx.lineWidth = 1.2; ctx.stroke();
+      }
+
+      draw();
+    })();
+
+    /* ══════════════════════════════════════
+       CHART.JS
+    ══════════════════════════════════════ */
+    (function () {
+      const mono = "'IBM Plex Mono',monospace";
+      Chart.defaults.color = '#7a90b8';
+      Chart.defaults.font.family = mono;
+
+      /* compact donut — sits inside 80×80 */
+      const domainData = [
+        { label: 'LifeSciences', pct: 60, color: '#38bdf8' },
+        { label: 'Cybersecurity', pct: 20, color: '#34d399' },
+        { label: 'Telecom', pct: 20, color: '#a78bfa' },
+      ];
+      const dcCanvas = document.getElementById('domain-chart');
+      dcCanvas.width = 160; dcCanvas.height = 160;
+      new Chart(dcCanvas, {
+        type: 'doughnut',
+        data: {
+          labels: domainData.map(d => d.label),
+          datasets: [{ data: domainData.map(d => d.pct), backgroundColor: domainData.map(d => d.color), borderWidth: 0, hoverOffset: 4 }]
+        },
+        options: {
+          cutout: '68%', responsive: false,
+          animation: { duration: 1000 },
+          plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.label + ': ' + ctx.parsed + '%' } } }
+        }
+      });
+      /* domain pills */
+      const pillContainer = document.getElementById('domain-pills');
+      if (pillContainer) {
+        pillContainer.innerHTML = domainData.map(d => `
+      <div style="display:flex;align-items:center;gap:.38rem;padding:.32rem .55rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:5px;">
+        <span style="width:7px;height:7px;border-radius:50%;background:${d.color};flex-shrink:0;"></span>
+        <span style="font-family:var(--fm);font-size:.6rem;color:#8494b4;line-height:1.2;">${d.label}<br><strong style="color:#dde6f5;font-size:.65rem;">${d.pct}%</strong></span>
+      </div>`).join('');
+      }
+
+      new Chart(document.getElementById('chart-domain'), {
+        type: 'doughnut',
+        data: {
+          labels: ['LifeSciences', 'Cloud/ITSM', 'InfoSec', 'Clinical'],
+          datasets: [{ data: [40, 30, 20, 10], backgroundColor: ['rgba(56,189,248,.7)', 'rgba(52,211,153,.7)', 'rgba(167,139,250,.7)', 'rgba(251,146,60,.7)'], borderWidth: 0 }]
+        },
+        options: { cutout: '65%', responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { font: { size: 9 }, boxWidth: 8 } } } }
+      });
+
+      new Chart(document.getElementById('chart-stack'), {
+        type: 'polarArea',
+        data: {
+          // labels: ['Python', 'Java', 'Node.js', 'Neo4j', 'Cloud', 'SQL'],
+          labels:['Neo4j', 'Python', 'RAG', 'LLM', 'Flask', 'FastAPI', 'ETL', 'Azure', 'AWS', 'Genomics', 'KG', 'Cypher', 'ML', 'NLP', 'Deep Learning', 'Tool Orchestration', 'Cloud', 'GCP', 'Tensorflow','Classical ML', 'Statistical Modelling'],
+          datasets: [{
+            data: [85, 90, 78, 82, 80, 86],
+            backgroundColor: ['rgba(56,189,248,.5)', 'rgba(52,211,153,.5)', 'rgba(167,139,250,.5)', 'rgba(251,146,60,.5)', 'rgba(56,189,248,.35)', 'rgba(52,211,153,.35)'],
+            borderWidth: 0
+          }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, scales: { r: { ticks: { display: false }, grid: { color: 'rgba(255,255,255,.05)' } } }, plugins: { legend: { position: 'bottom', labels: { font: { size: 9 }, boxWidth: 8 } } } }
+      });
+
+      new Chart(document.getElementById('chart-years'), {
+        type: 'line',
+        data: {
+          labels: ['2016', '2018', '2019', '2020', '2022', '2024'],
+          datasets: [{ data: [1, 3, 5, 7, 8, 9], borderColor: '#38bdf8', backgroundColor: 'rgba(56,189,248,.1)', fill: true, tension: .4, pointBackgroundColor: '#38bdf8', pointRadius: 3, borderWidth: 2 }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, scales: { x: { ticks: { font: { size: 8 } }, grid: { color: 'rgba(255,255,255,.04)' } }, y: { ticks: { font: { size: 8 } }, grid: { color: 'rgba(255,255,255,.04)' } } }, plugins: { legend: { display: false } } }
+      });
+    })();
+
+    /* ══════════════════════════════════════
+       SCROLL REVEAL (IntersectionObserver)
+    ══════════════════════════════════════ */
+    (function () {
+      const animEls = Array.from(document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale,.stagger-children'));
+
+      // Add body-ready AFTER a paint so content is visible on first render,
+      // then the observer handles the animation from that point onward.
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.body.classList.add('body-ready');
+
+          const io = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+              if (!e.isIntersecting) return;
+              const el = e.target;
+              el.classList.add('vis');
+              // trigger skill bar fills
+              el.querySelectorAll('.ks-fill').forEach(b => { b.style.width = b.dataset.w + '%'; });
+              io.unobserve(el);
+            });
+          }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+          animEls.forEach(el => {
+            // Elements already in the viewport get .vis immediately (no hidden flash)
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+              el.classList.add('vis');
+              el.querySelectorAll('.ks-fill').forEach(b => { b.style.width = b.dataset.w + '%'; });
+            } else {
+              io.observe(el);
+            }
+          });
+        });
+      });
+
+      // ── Dynamic career stats — fire immediately, hero is always visible on load ──
+      const now = new Date();
+      const careerStart = new Date(2016, 0, 1); // Jan 2016 — TCS start
+      const dsStart = new Date(2017, 4, 1); // May 2019 — Genomics/ML platform
+      const totalYrs = Math.floor((now - careerStart) / (1000 * 60 * 60 * 24 * 365.25));
+      const dsYrs = Math.floor((now - dsStart) / (1000 * 60 * 60 * 24 * 365.25));
+
+      // Update inline prose year spans immediately
+      const heroYrsTxt = document.getElementById('hero-yrs-txt');
+      const aboutYrsTxt = document.getElementById('about-yrs-txt');
+      if (heroYrsTxt) heroYrsTxt.textContent = totalYrs + '+';
+      if (aboutYrsTxt) aboutYrsTxt.textContent = totalYrs + '+';
+
+      function animateNum(elId, target, suffix) {
+        const el = document.getElementById(elId);
+        if (!el) return;
+        let cur = 0;
+        const step = Math.max(1, Math.floor(target / 40));
+        el.textContent = '0' + suffix;
+        const timer = setInterval(() => {
+          cur = Math.min(cur + step, target);
+          el.textContent = cur + suffix;
+          if (cur >= target) clearInterval(timer);
+        }, 35);
+      }
+
+
+      // Animate stat counters after a short delay so user sees them count up
+      setTimeout(() => {
+        animateNum('stat-yrs', totalYrs, '+');
+        animateNum('stat-kg', dsYrs, '+');
+        document.getElementById('stat-aw').textContent = '7×';
+      }, 600);
+
+      // Nav shrink on scroll
+      window.addEventListener('scroll', () => {
+        document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 60);
+      });
+    })();
+
+    /* ════════════════════════════════════
+       DOWNLOAD RESUME
+    ════════════════════════════════════ */
+    function downloadResume(e) {
+      if (e) e.preventDefault();
+      // ── Point this to your actual GitHub raw resume file ──
+      // To use: upload your resume PDF/DOCX to your GitHub repo and paste the raw URL below.
+      // Example: 'https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/Shishir_Naresh_Resume.pdf'
+      const GITHUB_RESUME_URL = 'https://raw.githubusercontent.com/shishir-naresh/portfolio/main/Shishir_Naresh_Resume.pdf';
+
+      // Show loading state on both buttons
+      document.querySelectorAll('.btn-dl, .nav-resume-btn').forEach(b => { b._orig = b.textContent; b.textContent = 'Downloading…'; b.style.opacity = '.6'; });
+
+      fetch(GITHUB_RESUME_URL)
+        .then(res => {
+          if (!res.ok) throw new Error('File not found at GitHub URL');
+          return res.blob();
+        })
+        .then(blob => {
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          // Detect extension from URL
+          const ext = GITHUB_RESUME_URL.split('.').pop().split('?')[0] || 'pdf';
+          a.download = 'Shishir_Naresh_Resume.' + ext;
+          document.body.appendChild(a); a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        })
+        .catch(() => {
+          // Fallback: generate HTML resume in-browser if GitHub fetch fails
+          _downloadHTMLResume();
+        })
+        .finally(() => {
+          document.querySelectorAll('.btn-dl, .nav-resume-btn').forEach(b => { b.textContent = b._orig || b.textContent; b.style.opacity = ''; });
+        });
+    }
+
+    function _downloadHTMLResume() {
+      const css = `
+    body{font-family:Georgia,serif;max-width:780px;margin:0 auto;padding:2.5rem 2rem;color:#111;line-height:1.6;font-size:14px}
+    h1{font-size:2rem;margin:0 0 .2rem;letter-spacing:-.02em}
+    .sub{font-size:1rem;color:#444;margin-bottom:.15rem}
+    .contact-line{font-size:.82rem;color:#555;margin-bottom:1.5rem}
+    .contact-line a{color:#1a6fa8;text-decoration:none}
+    hr{border:none;border-top:1.5px solid #111;margin:1rem 0 1.2rem}
+    h2{font-size:1.05rem;text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid #ccc;padding-bottom:.3rem;margin:1.4rem 0 .7rem}
+    h3{font-size:.97rem;margin:.9rem 0 .1rem}
+    .meta{font-size:.82rem;color:#555;margin-bottom:.4rem}
+    ul{padding-left:1.1rem;margin:.3rem 0}
+    li{margin-bottom:.25rem;font-size:.9rem}
+    .tags{display:flex;flex-wrap:wrap;gap:.3rem;margin:.5rem 0}
+    .tag{font-size:.72rem;background:#e8f4fb;color:#1a6fa8;padding:.15rem .5rem;border-radius:3px;font-family:monospace}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .award-item{font-size:.85rem;padding:.2rem 0;border-bottom:1px solid #eee}
+    @media print{body{padding:1rem}.tag{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
+  `;
+      const totalYrsCV = Math.floor((new Date() - new Date(2016, 0, 1)) / (1000 * 60 * 60 * 24 * 365.25));
+      const dsYrsCV = Math.floor((new Date() - new Date(2019, 4, 1)) / (1000 * 60 * 60 * 24 * 365.25));
+      const html = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Shishir Naresh — Resume</title><style>${css}</style></head><body>
+<h1>Shishir Naresh</h1>
+<div class="sub">Senior Data Scientist &amp; Gen-AI Engineer</div>
+<div class="contact-line">
+  <a href="mailto:nareshshishir@yahoo.com">nareshshishir@yahoo.com</a> &nbsp;·&nbsp;
+  +91 8929962295 &nbsp;·&nbsp;
+  <a href="https://www.linkedin.com/in/shishir-naresh-aa468b9a">linkedin.com/in/shishir-naresh-aa468b9a</a> &nbsp;·&nbsp;
+  Noida, Uttar Pradesh, India
+</div>
+<hr>
+
+<h2>Summary</h2>
+<p>${totalYrsCV}+ years of experience spanning statistical modelling, classical ML, and modern Gen-AI engineering. Built RAG pipelines over graph-structured data, designed LLM-powered chatbot architectures with multi-tool orchestration, served ML models via Flask &amp; FastAPI, and architected Knowledge Graph systems in Neo4j for LifeSciences research. Targeting Senior Data Scientist, Gen-AI Engineer, and Research Scientist roles.</p>
+
+<h2>Technical Skills</h2>
+<div class="two-col">
+  <div>
+    <strong>Gen-AI &amp; LLM Engineering:</strong>
+    <div class="tags"><span class="tag">LLM Integration</span><span class="tag">RAG Pipelines</span><span class="tag">Prompt Engineering</span><span class="tag">LangChain</span><span class="tag">Tool Orchestration</span><span class="tag">Agentic AI</span><span class="tag">Vector DBs</span><span class="tag">Embeddings</span></div>
+    <strong>Classical ML &amp; Statistics:</strong>
+    <div class="tags"><span class="tag">Scikit-learn</span><span class="tag">Random Forest</span><span class="tag">Gradient Boosting</span><span class="tag">Logistic Regression</span><span class="tag">Survival Analysis</span><span class="tag">Clustering</span><span class="tag">PCA / t-SNE</span><span class="tag">Anomaly Detection</span></div>
+    <strong>Model Serving &amp; APIs:</strong>
+    <div class="tags"><span class="tag">FastAPI</span><span class="tag">Flask</span><span class="tag">REST API</span><span class="tag">Spring Boot</span><span class="tag">Docker</span><span class="tag">AWS Lambda</span></div>
+  </div>
+  <div>
+    <strong>Knowledge Graphs &amp; Semantic AI:</strong>
+    <div class="tags"><span class="tag">Neo4j</span><span class="tag">Cypher</span><span class="tag">Graph RAG</span><span class="tag">Semantic Modelling</span><span class="tag">Ontologies</span></div>
+    <strong>Cloud &amp; Data Engineering:</strong>
+    <div class="tags"><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Step Functions</span><span class="tag">ETL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span></div>
+    <strong>Data Science:</strong>
+    <div class="tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">EDA</span><span class="tag">Feature Engineering</span><span class="tag">LifeSciences</span></div>
+  </div>
+</div>
+
+<h2>Work Experience</h2>
+
+<h3>Senior Data Scientist &amp; ML Engineer — Accenture, Noida</h3>
+<div class="meta">Mar 2022 – Present &nbsp;|&nbsp; Python · FastAPI · Flask · Statistical Modelling · AWS · Step Functions · MySQL</div>
+<ul>
+  <li>Designed and deployed statistical anomaly-detection models (isolation forest, z-score baselines, time-series decomposition) on security telemetry, surfacing threats in near real-time.</li>
+  <li>Exposed ML models as REST microservices using FastAPI &amp; Flask, consumed by downstream analytics dashboards via standardised prediction endpoints.</li>
+  <li>Built Python ETL ingestion pipelines with feature engineering and data-quality validation; orchestrated via AWS Step Functions with CloudWatch alerting for drift and latency.</li>
+  <li>Conducted EDA and built reporting layers translating model outputs into executive-ready insight dashboards.</li>
+</ul>
+
+<h3>Data Scientist &amp; AI/ML Engineer — Tata Consultancy Services, Noida</h3>
+<div class="meta">Jan 2016 – Feb 2022 &nbsp;|&nbsp; Python · Scikit-learn · Flask · Neo4j · RAG · Azure · LLM Orchestration · Java · Spring Boot</div>
+<ul>
+  <li><strong>Gen-AI &amp; Knowledge Graph — Genomics (2019–2022):</strong> Architected a RAG pipeline over genomic literature using Neo4j as graph store, vector embeddings for semantic retrieval, and LLM synthesis for natural-language Q&amp;A over biological datasets. Applied classical ML (random forest, gradient boosting, survival analysis, PCA/t-SNE) for biomarker classification; served models via Flask REST APIs.</li>
+  <li><strong>Gen-AI Chatbot &amp; Tool Orchestration (2018–2019):</strong> Designed LLM-powered ITSM chatbot with multi-tool orchestration — routing user intent to ServiceNow, Image-to-Text AI, and knowledge-base retrieval. Implemented session context management for coherent multi-turn dialogue. Deployed across MS Teams, Skype, and Cortana voice on Azure.</li>
+  <li><strong>Data Engineering — Clinical Trials (2016–2018):</strong> Built multi-source data sync pipelines aggregating clinical trial data with statistical quality checks (distribution tests, outlier detection). Implemented GridFS MongoDB streaming API for clinical imaging data. Led ILP team — awarded ILP LIREL Best Associate.</li>
+</ul>
+
+<h2>Education</h2>
+<ul>
+  <li><strong>B.Tech, Electrical Engineering</strong> — Uttarakhand Technical University, Dehradun (2015) — 75.6%</li>
+  <li><strong>Class XII</strong> — St. Mary's Sr. Sec. School, CBSE Haridwar (2011) — 85.6%</li>
+  <li><strong>Class X</strong> — St. Mary's Sr. Sec. School, CBSE Haridwar (2009) — 90%</li>
+</ul>
+
+<h2>Awards &amp; Recognition</h2>
+<div class="two-col">
+  <div>
+    <div class="award-item">Innovation Pride Award — TCS (Feb 2021)</div>
+    <div class="award-item">Service &amp; Commitment Award — TCS (Jan 2021)</div>
+    <div class="award-item">Technical Excellence Award — TCS (Aug 2020)</div>
+    <div class="award-item">On the Spot (Team) Award — TCS (Aug 2020)</div>
+  </div>
+  <div>
+    <div class="award-item">Applause for Team Award — TCS (Aug 2020)</div>
+    <div class="award-item">On The Spot Award — TCS (June 2017)</div>
+    <div class="award-item">ILP LIREL — Best Associate During Training, TCS (July 2016)</div>
+  </div>
+</div>
+
+</body></html>`;
+
+      const blob = new Blob([html], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'Shishir_Naresh_Resume.html';
+      document.body.appendChild(a); a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } // end _downloadHTMLResume
+
+    /* ════════════════════════════════════
+       KEYBOARD: ESC closes modals
+    ════════════════════════════════════ */
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeModalDirect();
+        closeAdmin();
+      }
+    });
+  </script>
+</body>
+
+</html>
